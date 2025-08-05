@@ -106,15 +106,15 @@ export default function AboutPage() {
             
             {/* Enhanced Stats Row */}
             <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-3xl mx-auto px-4 transition-all duration-1500 ${isSectionVisible('hero') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:bg-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-xl transform hover:scale-105 hover:bg-white/20">
                 <div className="text-2xl sm:text-3xl font-bold text-blue-200 mb-2">100%</div>
                 <div className="text-sm sm:text-base text-blue-100 font-medium">English Fluent</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:bg-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-xl transform hover:scale-105 hover:bg-white/20">
                 <div className="text-2xl sm:text-3xl font-bold text-purple-200 mb-2">24/7</div>
                 <div className="text-sm sm:text-base text-purple-100 font-medium">Global Support</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:bg-white/20 sm:col-span-2 lg:col-span-1">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-xl transform hover:scale-105 hover:bg-white/20 sm:col-span-2 lg:col-span-1">
                 <div className="text-2xl sm:text-3xl font-bold text-indigo-200 mb-2">Fast</div>
                 <div className="text-sm sm:text-base text-indigo-100 font-medium">Setup & Deploy</div>
               </div>
@@ -167,7 +167,7 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20 bg-gray-50" data-section="mission-vision" id="mission-vision">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            <Card className={`group relative hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('mission-vision') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('mission-vision') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                               <CardContent className="p-6 sm:p-8 relative">
                   <div className="flex items-center mb-4 sm:mb-6">
@@ -182,7 +182,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-                          <Card className={`group relative hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('mission-vision') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+                          <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('mission-vision') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-purple-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <CardContent className="p-6 sm:p-8 relative">
                   <div className="flex items-center mb-4 sm:mb-6">
@@ -212,7 +212,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {companyValues.map((value, index) => (
-              <Card key={index} className={`group relative text-center hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('our-edge') ? `animate-slide-in-${index % 2 === 0 ? 'left' : 'right'}` : `opacity-0 translate-x-[${index % 2 === 0 ? '-100px' : '100px'}]`}`}>
+              <Card key={index} className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('our-edge') ? `animate-slide-in-${index % 2 === 0 ? 'left' : 'right'}` : `opacity-0 translate-x-[${index % 2 === 0 ? '-100px' : '100px'}]`}`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-500/5 to-gray-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <CardContent className="p-8 relative">
                                      <div className={`w-16 h-16 bg-gradient-to-br from-${value.color}-500 to-${value.color}-600 rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
@@ -238,7 +238,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="relative">
-                <Card className={`group relative text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('our-process') ? `animate-slide-in-left-delay-${index}` : 'opacity-0 translate-x-[-100px]'}`}>
+                <Card className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('our-process') ? `animate-slide-in-left-delay-${index}` : 'opacity-0 translate-x-[-100px]'}`}>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <CardContent className="p-8 relative">
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">{step.icon}</div>
@@ -261,7 +261,7 @@ export default function AboutPage() {
       <section className="py-20" data-section="client-operations" id="client-operations">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card className={`group relative hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('client-operations') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('client-operations') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-green-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-8 relative">
                 <div className="flex items-center mb-6">
@@ -290,7 +290,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className={`group relative hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('client-operations') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('client-operations') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-8 relative">
                 <div className="flex items-center mb-6">
@@ -333,19 +333,19 @@ export default function AboutPage() {
           <p className={`text-2xl mb-12 opacity-90 max-w-3xl mx-auto font-medium transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>If you're looking for offshore talent that feels in-house — that's us.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:scale-105 transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transform hover:scale-105 transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="text-4xl mb-4">🚀</div>
               <h3 className="text-xl font-bold mb-3">Fast Setup</h3>
               <p className="text-white/80">Get your team up and running in days, not months</p>
             </div>
             
-            <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:scale-105 transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transform hover:scale-105 transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="text-4xl mb-4">🎯</div>
               <h3 className="text-xl font-bold mb-3">Results-Driven</h3>
               <p className="text-white/80">Focused on measurable outcomes and performance</p>
             </div>
             
-            <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:scale-105 transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transform hover:scale-105 transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="text-4xl mb-4">🌍</div>
               <h3 className="text-xl font-bold mb-3">Global Talent</h3>
               <p className="text-white/80">Access to world-class talent from around the globe</p>
@@ -367,7 +367,7 @@ export default function AboutPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <div className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative text-center">
                 <div className="text-5xl font-bold text-blue-600 mb-3 group-hover:text-blue-700 transition-colors duration-300">100%</div>
@@ -376,7 +376,7 @@ export default function AboutPage() {
               </div>
             </div>
             
-            <div className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <div className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-green-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative text-center">
                 <div className="text-5xl font-bold text-green-600 mb-3 group-hover:text-green-700 transition-colors duration-300">24/7</div>
@@ -385,7 +385,7 @@ export default function AboutPage() {
               </div>
             </div>
             
-            <div className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <div className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-purple-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative text-center">
                 <div className="text-5xl font-bold text-purple-600 mb-3 group-hover:text-purple-700 transition-colors duration-300">3+</div>
@@ -394,7 +394,7 @@ export default function AboutPage() {
               </div>
             </div>
             
-            <div className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <div className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative text-center">
                 <div className="text-5xl font-bold text-orange-600 mb-3 group-hover:text-orange-700 transition-colors duration-300">Fast</div>
