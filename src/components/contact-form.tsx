@@ -398,18 +398,20 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto border-0 shadow-lg">
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center flex items-center justify-center gap-2">
-          <Calendar className="w-6 h-6 text-blue-600" />
+    <Card className="w-full max-w-4xl mx-auto border-0 shadow-xl bg-white/90 backdrop-blur-sm rounded-2xl">
+      <CardHeader className="pb-6">
+        <CardTitle className="text-3xl font-bold text-center flex items-center justify-center gap-3 mb-4">
+          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+            <Calendar className="w-6 h-6 text-white" />
+          </div>
           Schedule Your Free Consultation
         </CardTitle>
-        <p className="text-gray-600 text-center">
+        <p className="text-gray-600 text-center text-lg">
           Tell us about your needs and we'll create a custom solution for your
           business
         </p>
-        <p className="text-sm text-gray-500 text-center mt-2">
-          All fields marked with <span className="text-red-500">*</span> are required
+        <p className="text-sm text-gray-500 text-center mt-3">
+          All fields marked with <span className="text-red-500 font-medium">*</span> are required
         </p>
       </CardHeader>
       <CardContent className="p-8">
@@ -423,8 +425,10 @@ export default function ContactForm() {
           </div>
           {/* Personal Information */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2 flex items-center gap-2">
-              <User className="w-5 h-5 text-blue-600" />
+            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                <User className="w-5 h-5 text-blue-600" />
+              </div>
               Personal Information
             </h3>
 
@@ -634,8 +638,10 @@ export default function ContactForm() {
 
           {/* Company Information */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2 flex items-center gap-2">
-              <Building className="w-5 h-5 text-blue-600" />
+            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                <Building className="w-5 h-5 text-green-600" />
+              </div>
               Company Information
             </h3>
 
@@ -706,8 +712,10 @@ export default function ContactForm() {
 
           {/* Services & Budget */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2 flex items-center gap-2">
-              <DollarSign className="w-5 h-5 text-blue-600" />
+            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                <DollarSign className="w-5 h-5 text-purple-600" />
+              </div>
               Services & Budget
             </h3>
 
@@ -787,7 +795,10 @@ export default function ContactForm() {
 
           {/* Project Details */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
+            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                <Calendar className="w-5 h-5 text-orange-600" />
+              </div>
               Project Details
             </h3>
 
@@ -827,7 +838,10 @@ export default function ContactForm() {
 
           {/* How did you hear about us */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
+            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                <Search className="w-5 h-5 text-indigo-600" />
+              </div>
               How did you find us?
             </h3>
 
@@ -864,23 +878,23 @@ export default function ContactForm() {
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-center pt-6">
+          <div className="flex justify-center pt-8">
             <Button
               type="submit"
               disabled={isSubmitting || !isValid || !isDirty}
-              className="w-full md:w-auto px-12 py-4 bg-blue-500 hover:bg-blue-600 disabled:opacity-50 text-lg font-medium relative overflow-hidden"
+              className="w-full md:w-auto px-16 py-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 disabled:opacity-50 text-xl font-bold relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               {isSubmitting ? (
                 <>
-                  <div className="absolute inset-0 bg-blue-600 animate-pulse"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 animate-pulse"></div>
                   <div className="relative flex items-center">
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                    <span>Submitting...</span>
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+                    <span className="text-lg">Submitting...</span>
                   </div>
                 </>
               ) : (
                 <>
-                  <Calendar className="w-5 h-5 mr-2" />
+                  <Calendar className="w-6 h-6 mr-3" />
                   Schedule my Consultation
                 </>
               )}
