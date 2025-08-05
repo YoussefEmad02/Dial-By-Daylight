@@ -74,7 +74,16 @@ export default function Carousel() {
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
+            <Image 
+              src={item.image || "/placeholder.svg"} 
+              alt={item.title} 
+              fill 
+              className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+            />
             <div className="absolute inset-0 backdrop-blur-sm bg-opacity-40 flex items-end">
               <div className="p-6 md:p-8 text-white">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">{item.title}</h3>
