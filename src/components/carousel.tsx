@@ -5,12 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
-interface CarouselItem {
-  id: number
-  image: string
-  title: string
-  description: string
-}
+
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -49,7 +44,7 @@ export default function Carousel() {
     }, 5000) // Change slide every 5 seconds
 
     return () => clearInterval(interval)
-  }, [])
+  }, [carouselItems.length])
 
   const goToPrevious = () => {
     setCurrentIndex(currentIndex === 0 ? carouselItems.length - 1 : currentIndex - 1)

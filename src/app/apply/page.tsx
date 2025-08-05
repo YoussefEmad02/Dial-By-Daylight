@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { User, CheckCircle, AlertCircle, Building, GraduationCap, Search, Send } from "lucide-react"
@@ -66,7 +66,7 @@ export default function ApplyPage() {
     availability: '',
     motivation: '',
   })
-  const { toast } = useToast()
+
 
   const {
     register,
@@ -74,7 +74,6 @@ export default function ApplyPage() {
     formState: { errors },
     reset,
     setValue,
-    watch,
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   })
@@ -224,9 +223,8 @@ export default function ApplyPage() {
       console.log("Application submitted:", data)
 
       setSubmitStatus("success")
-      toast({
-        title: "Application Submitted Successfully!",
-        description: "Thank you for your interest. We'll review your application and contact you within 48 hours.",
+      toast.success("Application Submitted Successfully!", {
+        description: "Thank you for your interest. We&apos;ll review your application and contact you within 48 hours.",
         duration: 5000,
       })
 
@@ -254,12 +252,10 @@ export default function ApplyPage() {
         city: 0,
         motivation: 0,
       })
-    } catch (error) {
+    } catch {
       setSubmitStatus("error")
-      toast({
-        title: "Submission Failed",
+      toast.error("Submission Failed", {
         description: "There was an error submitting your application. Please try again or contact us directly.",
-        variant: "destructive",
         duration: 5000,
       })
     } finally {
@@ -332,7 +328,7 @@ export default function ApplyPage() {
                 Agent Application Form
               </CardTitle>
               <p className="text-gray-600 text-center text-lg mt-4">
-                Tell us about yourself and why you'd be a great fit for our global team
+                Tell us about yourself and why you&apos;d be a great fit for our global team
               </p>
             </CardHeader>
             <CardContent className="p-8">
@@ -493,7 +489,7 @@ export default function ApplyPage() {
                             ))
                           ) : (
                             <div className="px-3 py-2 text-sm text-gray-500">
-                              No countries found matching "{countrySearch}"
+                              No countries found matching &quot;{countrySearch}&quot;
                             </div>
                           )}
                         </SelectContent>
@@ -653,7 +649,7 @@ export default function ApplyPage() {
                       id="motivation"
                       {...register("motivation")}
                       className={`min-h-32 ${errors.motivation ? "border-red-500 focus:ring-red-500" : ""} transition-all duration-300`}
-                      placeholder="Tell us about your motivation, relevant experience, and why you'd be a great fit for our remote team..."
+                      placeholder="Tell us about your motivation, relevant experience, and why you&apos;d be a great fit for our remote team..."
                       onChange={(e) => {
                         handleCharacterCount('motivation', e.target.value)
                         setFormValues(prev => ({ ...prev, motivation: e.target.value }))
@@ -711,7 +707,7 @@ export default function ApplyPage() {
                     <div className="text-center">
                       <p className="text-green-800 font-medium">Application Submitted Successfully!</p>
                       <p className="text-green-700 text-sm mt-1">
-                        We'll review your application and contact you within 48 hours.
+                        We&apos;ll review your application and contact you within 48 hours.
                       </p>
                     </div>
                   </div>

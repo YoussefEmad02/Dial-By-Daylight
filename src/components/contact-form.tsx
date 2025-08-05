@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import {
   Calendar,
   CheckCircle,
@@ -98,7 +98,7 @@ export default function ContactForm() {
     projectDetails: 0,
   });
   const [countrySearch, setCountrySearch] = useState("");
-  const { toast } = useToast();
+
 
   const {
     register,
@@ -106,7 +106,6 @@ export default function ContactForm() {
     formState: { errors, isValid, isDirty },
     reset,
     setValue,
-    watch,
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     mode: "onChange",
@@ -325,10 +324,7 @@ export default function ContactForm() {
     }
   };
 
-  const handlePhoneCountryCodeChange = (code: string) => {
-    setSelectedCountryCode(code);
-    setValue("countryCode", code);
-  };
+
 
   const handleCharacterCount = (field: keyof typeof characterCounts, value: string) => {
     setCharacterCounts(prev => ({
@@ -360,10 +356,8 @@ export default function ContactForm() {
       console.log("Enhanced form submitted:", data);
 
       setSubmitStatus("success");
-      toast({
-        title: "Consultation Request Submitted!",
-        description:
-          "Thank you for your interest. We'll contact you within 24 hours to schedule your free consultation.",
+      toast.success("Consultation Request Submitted!", {
+        description: "Thank you for your interest. We&apos;ll contact you within 24 hours to schedule your free consultation.",
         duration: 5000,
       });
 
@@ -385,11 +379,8 @@ export default function ContactForm() {
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
-      toast({
-        title: "Submission Failed",
-        description:
-          "There was an error submitting your request. Please try again or contact us directly.",
-        variant: "destructive",
+      toast.error("Submission Failed", {
+        description: "There was an error submitting your request. Please try again or contact us directly.",
         duration: 5000,
       });
     } finally {
@@ -407,7 +398,7 @@ export default function ContactForm() {
           Schedule Your Free Consultation
         </CardTitle>
         <p className="text-gray-600 text-center text-lg">
-          Tell us about your needs and we'll create a custom solution for your
+          Tell us about your needs and we&apos;ll create a custom solution for your
           business
         </p>
         <p className="text-sm text-gray-500 text-center mt-3">
@@ -583,7 +574,7 @@ export default function ContactForm() {
                       ))
                     ) : (
                       <div className="px-3 py-2 text-sm text-gray-500">
-                        No countries found matching "{countrySearch}"
+                        No countries found matching &quot;{countrySearch}&quot;
                       </div>
                     )}
                   </SelectContent>
@@ -921,7 +912,7 @@ export default function ContactForm() {
                   Consultation Request Submitted!
                 </p>
                 <p className="text-green-700 text-sm mt-1">
-                  We'll contact you within 24 hours to schedule your free
+                  We&apos;ll contact you within 24 hours to schedule your free
                   consultation.
                 </p>
               </div>

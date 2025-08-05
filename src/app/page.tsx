@@ -224,7 +224,7 @@ export default function HomePage() {
               Our Success Stories
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore how we've helped businesses transform and achieve their
+              Explore how we&apos;ve helped businesses transform and achieve their
               goals.
             </p>
           </div>

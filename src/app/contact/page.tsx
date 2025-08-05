@@ -30,7 +30,7 @@ export default function ContactPage() {
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto mb-8 leading-relaxed">
               Ready to transform your business with our expert customer support and virtual assistant services? 
-              Let's discuss how we can help you scale efficiently.
+              Let&apos;s discuss how we can help you scale efficiently.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <div className="flex items-center text-white/90">
@@ -125,7 +125,7 @@ export default function ContactPage() {
               Ready to get started?
             </div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Fill out the form below and we'll get back to you within 24 hours to discuss your needs
+              Fill out the form below and we&apos;ll get back to you within 24 hours to discuss your needs
             </p>
           </div>
           <ContactForm />

@@ -195,7 +195,7 @@ export default function AboutPage() {
                     <h2 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-300">Our Vision</h2>
                   </div>
                   <p className="text-gray-600 text-base sm:text-lg leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                  To become the go-to outbound team for modern businesses — blending global talent with startup speed, operational discipline, and ruthless execution. We envision a world where remote voice agents are more trusted, trained, and effective than in-house teams — and we're building the systems to make that happen.
+                  To become the go-to outbound team for modern businesses — blending global talent with startup speed, operational discipline, and ruthless execution. We envision a world where remote voice agents are more trusted, trained, and effective than in-house teams — and we&apos;re building the systems to make that happen.
                 </p>
               </CardContent>
             </Card>
@@ -333,7 +333,7 @@ export default function AboutPage() {
         }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className={`text-3xl md:text-4xl font-bold mb-6 transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>Our Promise</h2>
-          <p className={`text-2xl mb-12 opacity-90 max-w-3xl mx-auto font-medium transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>If you're looking for offshore talent that feels in-house — that's us.</p>
+          <p className={`text-2xl mb-12 opacity-90 max-w-3xl mx-auto font-medium transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>If you&apos;re looking for offshore talent that feels in-house — that&apos;s us.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transform hover:scale-105 transition-all duration-1000 ${isSectionVisible('our-promise') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>

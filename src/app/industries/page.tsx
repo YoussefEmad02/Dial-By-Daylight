@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   Building,
   Users,
@@ -12,14 +12,10 @@ import {
   Globe,
   Zap,
   Shield,
-  Home,
   Sun,
   Heart,
   Building2,
   Wrench,
-  GraduationCap,
-  Phone,
-  Calendar,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -352,7 +348,7 @@ export default function IndustriesPage() {
               Our Industry Solutions
             </h2>
             <p className={`text-xl text-gray-600 max-w-3xl mx-auto transition-all duration-1500 ${isSectionVisible('industries') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
-              Specialized teams trained for your industry's unique challenges and opportunities
+              Specialized teams trained for your industry&apos;s unique challenges and opportunities
             </p>
           </div>
 
@@ -478,7 +474,7 @@ export default function IndustriesPage() {
                 <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Building2 className="w-10 h-10 text-white" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Don't See Your Industry?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Don&apos;t See Your Industry?</h2>
                 <p className="text-xl text-blue-100 mb-8 leading-relaxed">
                   We customize campaigns for any business that requires phone work. If it involves outbound calling,
                   lead generation, or customer support, we can build a specialized team for it.
@@ -709,9 +705,9 @@ export default function IndustriesPage() {
 
                       <div className="mt-6 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
                         <p className="text-sm text-gray-600 italic">
-                          "Dial By Daylight transformed our outbound operations.
+                          &quot;Dial By Daylight transformed our outbound operations.
                           Their specialized approach for our industry has
-                          delivered exceptional results."
+                          delivered exceptional results.&quot;
                         </p>
                         <p className="text-xs text-gray-500 mt-2">
                           - Industry Client

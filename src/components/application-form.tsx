@@ -62,7 +62,6 @@ export default function ApplicationForm() {
   })
 
   const employmentStatus = watch("employmentStatus")
-  const applicationSource = watch("applicationSource")
 
   const employmentOptions = [
     { value: "employed", label: "Currently Employed" },
@@ -100,7 +99,7 @@ export default function ApplicationForm() {
       // Reset form after successful submission
       reset()
       setSelectedDate(undefined)
-    } catch (error) {
+    } catch {
       setSubmitStatus("error")
       toast.error("Submission Failed", {
         description: "There was an error submitting your application. Please try again or contact support.",
@@ -286,7 +285,7 @@ export default function ApplicationForm() {
               </Label>
               <RadioGroup
                 value={employmentStatus}
-                onValueChange={(value) => setValue("employmentStatus", value as any)}
+                onValueChange={(value) => setValue("employmentStatus", value as "employed" | "between-jobs" | "self-employed")}
                 className="space-y-2"
               >
                 {employmentOptions.map((option) => (
@@ -312,7 +311,7 @@ export default function ApplicationForm() {
                 <div>
                   <p className="text-sm font-medium text-yellow-800">Important Note</p>
                   <p className="text-sm text-yellow-700">
-                    Please answer accurately as this is very important for your application's processing.
+                    Please answer accurately as this is very important for your application&apos;s processing.
                   </p>
                 </div>
               </div>
@@ -322,7 +321,7 @@ export default function ApplicationForm() {
               <Label className="text-sm font-medium">
                 Where did you apply from? <span className="text-red-500">*</span>
               </Label>
-              <Select onValueChange={(value) => setValue("applicationSource", value as any)}>
+              <Select onValueChange={(value) => setValue("applicationSource", value as "upwork" | "linkedin" | "facebook" | "google" | "wuzzuf" | "bayt" | "referral")}>
                 <SelectTrigger className={errors.applicationSource ? "border-red-500" : ""}>
                   <SelectValue placeholder="Select where you found this opportunity" />
                 </SelectTrigger>
@@ -366,7 +365,7 @@ export default function ApplicationForm() {
               <div className="text-center">
                 <p className="text-green-800 font-medium">Application Submitted Successfully!</p>
                 <p className="text-green-700 text-sm mt-1">
-                  We'll review your application and contact you within 48 hours.
+                  We&apos;ll review your application and contact you within 48 hours.
                 </p>
               </div>
             </div>
