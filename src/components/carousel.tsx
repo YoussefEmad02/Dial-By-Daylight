@@ -18,25 +18,25 @@ export default function Carousel() {
   const carouselItems = [
     {
       id: 1,
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/bg.png",
       title: "Digital Innovation",
       description: "Transforming businesses through cutting-edge digital solutions and strategic technology implementations.",
     },
     {
       id: 2,
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/company.png",
       title: "Expert Consulting",
       description: "Our experienced consultants provide strategic guidance to optimize your operations and drive sustainable growth.",
     },
     {
       id: 3,
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/bg.png",
       title: "Technology Excellence",
       description: "Custom software solutions and technology infrastructure designed to meet your unique business requirements.",
     },
     {
       id: 4,
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/company.png",
       title: "Client Success",
       description: "Dedicated to delivering exceptional results and building long-term partnerships with our valued clients.",
     },
@@ -64,9 +64,9 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full max-w-7xl mx-auto">
       {/* Main carousel container */}
-      <div className="relative h-96 md:h-[500px] overflow-hidden rounded-lg shadow-lg">
+      <div className="relative h-96 md:h-[500px] lg:h-[600px] overflow-hidden rounded-lg shadow-lg">
         {carouselItems.map((item, index) => (
           <div
             key={item.id}
@@ -75,7 +75,7 @@ export default function Carousel() {
             }`}
           >
             <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+            <div className="absolute inset-0 backdrop-blur-sm bg-opacity-40 flex items-end">
               <div className="p-6 md:p-8 text-white">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">{item.title}</h3>
                 <p className="text-lg md:text-xl opacity-90">{item.description}</p>
