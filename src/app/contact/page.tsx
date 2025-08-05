@@ -60,7 +60,7 @@ export default function ContactPage() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
             {/* Phone Card */}
-            <div className="group relative">
+            <div className="group relative animate-slide-in-left">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               <div className="relative text-center p-8 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-300">
@@ -81,13 +81,12 @@ export default function ContactPage() {
                 </div>
                 <div className="mt-6 flex items-center justify-center text-blue-600 group-hover:text-blue-700 transition-colors duration-300">
                   <span className="text-sm font-medium">Available 24/7</span>
-                  <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
             </div>
 
             {/* Email Card */}
-            <div className="group relative">
+            <div className="group relative animate-slide-in-right">
               <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               <div className="relative text-center p-8 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105">
                 <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-300">
@@ -108,50 +107,12 @@ export default function ContactPage() {
                 </div>
                 <div className="mt-6 flex items-center justify-center text-green-600 group-hover:text-green-700 transition-colors duration-300">
                   <span className="text-sm font-medium">Response within 2 hours</span>
-                  <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Additional Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-purple-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Business Hours</h4>
-                  <p className="text-sm text-gray-600">Mon-Fri: 9AM-6PM PST</p>
-                </div>
-              </div>
-            </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                  <Send className="w-6 h-6 text-orange-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Response Time</h4>
-                  <p className="text-sm text-gray-600">Within 2 hours</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                  <Globe className="w-6 h-6 text-indigo-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Global Support</h4>
-                  <p className="text-sm text-gray-600">24/7 availability</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
