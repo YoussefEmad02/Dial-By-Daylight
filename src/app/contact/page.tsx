@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Clock, Send, ArrowRight, Users, Globe } from "lucide-react";
+import { Mail, Phone, Clock, ArrowRight, Users, Globe } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ContactForm from "@/components/contact-form";

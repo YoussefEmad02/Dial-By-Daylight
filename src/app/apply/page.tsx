@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -15,7 +15,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { useToast } from "@/hooks/use-toast"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { User, Phone, Mail, Calendar, CheckCircle, AlertCircle, Building, GraduationCap, Search, Send } from "lucide-react"
+import { User, CheckCircle, AlertCircle, Building, GraduationCap, Search, Send } from "lucide-react"
 import Flag from "react-flagkit"
 
 // Form validation schema

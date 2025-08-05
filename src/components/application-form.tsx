@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 import { CalendarDays, Send, CheckCircle, AlertCircle, Mic, ExternalLink } from "lucide-react"
 import { format } from "date-fns"
 import { Calendar as CalendarComponent } from "@/components/ui/calendar"
@@ -31,14 +31,14 @@ const applicationSchema = z.object({
     .min(1, "Voice memo link is required")
     .url("Please enter a valid URL")
     .refine((url) => url.includes("vocaroo.com"), "Please use a Vocaroo.com link"),
-  availableStartDate: z.date({
-    required_error: "Please select your available start date",
+  availableStartDate: z.date().refine((date) => date !== undefined, {
+    message: "Please select your available start date",
   }),
-  employmentStatus: z.enum(["employed", "between-jobs", "self-employed"], {
-    required_error: "Please select your employment status",
+  employmentStatus: z.enum(["employed", "between-jobs", "self-employed"]).refine((val) => val !== undefined, {
+    message: "Please select your employment status",
   }),
-  applicationSource: z.enum(["upwork", "linkedin", "facebook", "google", "wuzzuf", "bayt", "referral"], {
-    required_error: "Please select where you found this opportunity",
+  applicationSource: z.enum(["upwork", "linkedin", "facebook", "google", "wuzzuf", "bayt", "referral"]).refine((val) => val !== undefined, {
+    message: "Please select where you found this opportunity",
   }),
 })
 
@@ -48,7 +48,7 @@ export default function ApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [selectedDate, setSelectedDate] = useState<Date>()
-  const { toast } = useToast()
+
 
   const {
     register,
@@ -92,8 +92,7 @@ export default function ApplicationForm() {
       console.log("Application submitted:", data)
 
       setSubmitStatus("success")
-      toast({
-        title: "Application Submitted Successfully!",
+      toast.success("Application Submitted Successfully!", {
         description: "Thank you for your application. We'll review it and get back to you within 48 hours.",
         duration: 5000,
       })
@@ -103,10 +102,8 @@ export default function ApplicationForm() {
       setSelectedDate(undefined)
     } catch (error) {
       setSubmitStatus("error")
-      toast({
-        title: "Submission Failed",
+      toast.error("Submission Failed", {
         description: "There was an error submitting your application. Please try again or contact support.",
-        variant: "destructive",
         duration: 5000,
       })
     } finally {
