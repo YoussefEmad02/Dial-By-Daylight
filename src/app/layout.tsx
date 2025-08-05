@@ -8,17 +8,88 @@ import { Toaster } from "@/components/ui/sonner"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "TechCorp Solutions - Professional Business Services",
-  description:
-    "Leading provider of innovative business solutions and technology services. Discover our expertise in digital transformation and consulting.",
-  keywords: "business solutions, technology services, consulting, digital transformation",
-  authors: [{ name: "TechCorp Solutions" }],
-  openGraph: {
-    title: "TechCorp Solutions - Professional Business Services",
-    description: "Leading provider of innovative business solutions and technology services.",
-    type: "website",
+  title: {
+    default: "Dial By Daylight - Cost-Effective Outbound Teams Built Fast",
+    template: "%s | Dial By Daylight"
   },
-    generator: 'v0.dev'
+  description: "Transform your business with Dial By Daylight's cost-effective, high-performance outbound teams. Professional cold calling, customer support, appointment setting, and virtual assistance services. Scale your operations fast with our expert remote teams.",
+  keywords: [
+    "outbound teams",
+    "cold calling",
+    "customer support",
+    "appointment setting", 
+    "virtual assistance",
+    "BPO services",
+    "lead generation",
+    "remote teams",
+    "business process outsourcing",
+    "cost-effective solutions",
+    "professional services",
+    "24/7 support"
+  ],
+  authors: [{ name: "Dial By Daylight", url: "https://dialbydaylight.com" }],
+  creator: "Dial By Daylight",
+  publisher: "Dial By Daylight",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://dialbydaylight.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://dialbydaylight.com",
+    siteName: "Dial By Daylight",
+    title: "Dial By Daylight - Cost-Effective Outbound Teams Built Fast",
+    description: "Transform your business with our cost-effective, high-performance outbound teams. Professional cold calling, customer support, appointment setting, and virtual assistance services.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Dial By Daylight - Professional Outbound Teams",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dialbydaylight",
+    creator: "@dialbydaylight",
+    title: "Dial By Daylight - Cost-Effective Outbound Teams Built Fast",
+    description: "Transform your business with our cost-effective, high-performance outbound teams. Professional cold calling, customer support, appointment setting, and virtual assistance services.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
+    yahoo: "your-yahoo-verification-code",
+  },
+  category: "Business Services",
+  classification: "Business Process Outsourcing",
+  other: {
+    "theme-color": "#3B82F6",
+    "msapplication-TileColor": "#3B82F6",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "Dial By Daylight",
+    "application-name": "Dial By Daylight",
+    "msapplication-TileImage": "/favicon.ico",
+  },
 }
 
 export default function RootLayout({
@@ -28,6 +99,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#3B82F6" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Dial By Daylight" />
+        <meta name="application-name" content="Dial By Daylight" />
+        <meta name="msapplication-TileColor" content="#3B82F6" />
+        <meta name="msapplication-TileImage" content="/favicon.ico" />
+      </head>
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
