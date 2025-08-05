@@ -38,14 +38,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo and Company Name */}
-          <div className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
               <span className="text-white font-bold text-lg lg:text-xl">DD</span>
             </div>
             <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               Dial By Daylight
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -72,7 +72,7 @@ export default function Navbar() {
 
             {/* Book Consultation Button */}
             <Link href="/contact">
-              <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-xl flex items-center space-x-2 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl flex items-center space-x-2 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
                 <Calendar className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
                 <span className="font-medium">Book Free Consultation</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -124,7 +124,7 @@ export default function Navbar() {
               {/* Mobile Book Consultation Button */}
               <div className="px-4 pt-2">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white flex items-center justify-center space-x-2 py-3 rounded-xl shadow-lg">
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white flex items-center justify-center space-x-2 py-3 rounded-xl shadow-lg">
                     <Calendar className="w-4 h-4" />
                     <span className="font-medium">Book Free Consultation</span>
                     <ArrowRight className="w-4 h-4" />
