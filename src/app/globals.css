@@ -118,6 +118,48 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Prevent horizontal scrolling on mobile */
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  /* Ensure all containers respect viewport width */
+  html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  /* Prevent horizontal scrolling on all elements */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure images don't cause horizontal overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure text doesn't overflow on mobile */
+  p, h1, h2, h3, h4, h5, h6, span, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Improve mobile responsiveness */
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    /* Ensure proper padding on mobile */
+    .container, .max-w-7xl {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }
 
