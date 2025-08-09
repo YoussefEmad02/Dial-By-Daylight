@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { toast } from "sonner"
-import { CalendarDays, Send, CheckCircle, AlertCircle, Mic, ExternalLink } from "lucide-react"
+import { CalendarDays, Send, CheckCircle, AlertCircle, Mic, ExternalLink, User, Briefcase, Search } from "lucide-react"
 import { format } from "date-fns"
 import { Calendar as CalendarComponent } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
@@ -25,7 +25,7 @@ const applicationSchema = z.object({
   phone: z
     .string()
     .min(1, "Phone number is required")
-    .regex(/^[+]?[1-9][\d\s\-$$$$]{7,15}$/, "Please enter a valid phone number"),
+    .regex(/^[+]?[1-9][\d\s\-()]{7,15}$/, "Please enter a valid phone number"),
   voiceMemoLink: z
     .string()
     .min(1, "Voice memo link is required")
@@ -111,13 +111,13 @@ export default function ApplicationForm() {
   }
 
   return (
-    <Card className="w-full max-w-4xl mx-auto border-0 shadow-lg">
-      <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50">
+    <Card className="w-full max-w-4xl mx-auto border-0 shadow-2xl bg-white/90 backdrop-blur-sm rounded-2xl">
+      <CardHeader className="pb-6">
         <CardTitle className="text-2xl font-bold text-center flex items-center justify-center gap-2">
           <Send className="w-6 h-6 text-blue-600" />
           Agent Application Form
         </CardTitle>
-        <p className="text-gray-600 text-center">
+        <p className="text-gray-600 text-center text-lg">
           Complete all fields below to submit your application. Fields marked with * are required.
         </p>
       </CardHeader>
@@ -125,7 +125,10 @@ export default function ApplicationForm() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           {/* Personal Information */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Personal Information</h3>
+            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2 flex items-center gap-2">
+              <User className="w-5 h-5 text-blue-600" />
+              Personal Information
+            </h3>
 
             {/* Name Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -136,10 +139,12 @@ export default function ApplicationForm() {
                 <Input
                   id="firstName"
                   {...register("firstName")}
-                  className={errors.firstName ? "border-red-500" : ""}
+                  className={errors.firstName ? "border-red-500 focus:ring-red-500" : ""}
                   placeholder="Enter your first name"
                 />
-                {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName.message}</p>}
+                {errors.firstName && (
+                  <p id="firstName-error" className="text-red-500 text-sm" role="alert">{errors.firstName.message}</p>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -149,10 +154,12 @@ export default function ApplicationForm() {
                 <Input
                   id="lastName"
                   {...register("lastName")}
-                  className={errors.lastName ? "border-red-500" : ""}
+                  className={errors.lastName ? "border-red-500 focus:ring-red-500" : ""}
                   placeholder="Enter your last name"
                 />
-                {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName.message}</p>}
+                {errors.lastName && (
+                  <p id="lastName-error" className="text-red-500 text-sm" role="alert">{errors.lastName.message}</p>
+                )}
               </div>
             </div>
 
@@ -166,31 +173,44 @@ export default function ApplicationForm() {
                   id="email"
                   type="email"
                   {...register("email")}
-                  className={errors.email ? "border-red-500" : ""}
+                  className={errors.email ? "border-red-500 focus:ring-red-500" : ""}
                   placeholder="your.email@example.com"
                 />
-                {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+                {errors.email && (
+                  <p id="email-error" className="text-red-500 text-sm" role="alert">{errors.email.message}</p>
+                )}
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="phone" className="text-sm font-medium">
                   Phone Number <span className="text-red-500">*</span>
                 </Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  {...register("phone")}
-                  className={errors.phone ? "border-red-500" : ""}
-                  placeholder="+20 123 456 7890"
-                />
-                {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+                <div className="flex">
+                  <div className="flex items-center px-3 border border-r-0 rounded-l-md bg-gray-50 text-sm font-medium">
+                    <span>+20</span>
+                  </div>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    {...register("phone")}
+                    className={`rounded-l-none ${errors.phone ? "border-red-500 focus:ring-red-500" : ""}`}
+                    placeholder="123 456 7890"
+                    aria-describedby={errors.phone ? "phone-error" : undefined}
+                  />
+                </div>
+                {errors.phone && (
+                  <p id="phone-error" className="text-red-500 text-sm" role="alert">{errors.phone.message}</p>
+                )}
               </div>
             </div>
           </div>
 
           {/* Voice Memo Section */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Voice Introduction</h3>
+            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2 flex items-center gap-2">
+              <Mic className="w-5 h-5 text-blue-600" />
+              Voice Introduction
+            </h3>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
               <div className="flex items-start space-x-3">
@@ -239,7 +259,10 @@ export default function ApplicationForm() {
 
           {/* Availability & Status */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Availability & Status</h3>
+            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2 flex items-center gap-2">
+              <CalendarDays className="w-5 h-5 text-blue-600" />
+              Availability & Status
+            </h3>
 
             {/* Start Date */}
             <div className="space-y-2">
@@ -303,7 +326,10 @@ export default function ApplicationForm() {
 
           {/* Application Source */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Application Source</h3>
+            <h3 className="text-lg font-semibold text-gray-900 border-b pb-2 flex items-center gap-2">
+              <Search className="w-5 h-5 text-blue-600" />
+              Application Source
+            </h3>
 
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
               <div className="flex items-start space-x-2">
@@ -322,7 +348,7 @@ export default function ApplicationForm() {
                 Where did you apply from? <span className="text-red-500">*</span>
               </Label>
               <Select onValueChange={(value) => setValue("applicationSource", value as "upwork" | "linkedin" | "facebook" | "google" | "wuzzuf" | "bayt" | "referral")}>
-                <SelectTrigger className={errors.applicationSource ? "border-red-500" : ""}>
+                <SelectTrigger className={errors.applicationSource ? "border-red-500 focus:ring-red-500" : ""}>
                   <SelectValue placeholder="Select where you found this opportunity" />
                 </SelectTrigger>
                 <SelectContent>
@@ -333,7 +359,9 @@ export default function ApplicationForm() {
                   ))}
                 </SelectContent>
               </Select>
-              {errors.applicationSource && <p className="text-red-500 text-sm">{errors.applicationSource.message}</p>}
+              {errors.applicationSource && (
+                <p id="applicationSource-error" className="text-red-500 text-sm" role="alert">{errors.applicationSource.message}</p>
+              )}
             </div>
           </div>
 
@@ -342,17 +370,20 @@ export default function ApplicationForm() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full md:w-auto px-12 py-3 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-lg"
+              className="w-full md:w-auto px-16 py-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 disabled:opacity-50 text-xl font-bold relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               {isSubmitting ? (
                 <>
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Submitting Application...
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 animate-pulse"></div>
+                  <div className="relative flex items-center">
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+                    <span className="text-lg">Submitting...</span>
+                  </div>
                 </>
               ) : (
                 <>
-                  <Send className="w-5 h-5 mr-2" />
-                  Submit Application
+                  <Send className="w-6 h-6 mr-3" />
+                  Submit my Application
                 </>
               )}
             </Button>
