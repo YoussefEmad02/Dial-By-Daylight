@@ -152,10 +152,10 @@ export default function HomePage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-black sm:text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
                   Digital Transformation
                 </h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-black sm:text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   Transform your business with cutting-edge digital solutions
                   and strategies.
                 </p>
@@ -173,10 +173,10 @@ export default function HomePage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Users className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-black sm:text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
                   Business Consulting
                 </h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-black sm:text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   Expert guidance to optimize your operations and drive growth.
                 </p>
               </CardContent>
@@ -193,10 +193,10 @@ export default function HomePage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-black sm:text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
                   Technology Solutions
                 </h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-black sm:text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   Custom software and technology solutions tailored to your
                   needs.
                 </p>
@@ -241,7 +241,7 @@ export default function HomePage() {
       </section>
 
       {/* Enhanced Why Choose Us Section */}
-      <section className="py-20" data-section="why" id="why">
+      <section className="py-20 bg-gray-50" data-section="why" id="why">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`text-center mb-12 sm:mb-16 transition-all duration-1500 ${
@@ -271,10 +271,10 @@ export default function HomePage() {
                 <div className="w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Star className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-black sm:text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
                   Expertise
                 </h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-black sm:text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   Proven results and deep industry knowledge.
                 </p>
               </CardContent>
@@ -291,10 +291,10 @@ export default function HomePage() {
                 <div className="w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Zap className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-black sm:text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
                   Innovation
                 </h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-black sm:text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   Cutting-edge solutions using the latest technologies.
                 </p>
               </CardContent>
@@ -311,10 +311,10 @@ export default function HomePage() {
                 <div className="w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-black sm:text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
                   24/7 Support
                 </h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-black sm:text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   Round-the-clock support to ensure your success.
                 </p>
               </CardContent>

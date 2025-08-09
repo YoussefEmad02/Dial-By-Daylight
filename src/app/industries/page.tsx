@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import {
   Building,
   Users,
-  Target,
   TrendingUp,
   CheckCircle,
   ArrowRight,
@@ -199,38 +198,6 @@ export default function IndustriesPage() {
         clients: "30+",
         appointments: "200+",
         conversion: "25%",
-      },
-    },
-    {
-      id: "b2b-lead-generation",
-      title: "B2B Lead Generation",
-      description:
-        "Strategic B2B outbound solutions to expand your business network and client base.",
-      subtitle: "Business Development",
-      badge: "Strategic",
-      icon: Target,
-      color: "green",
-      gradient: "from-green-500 to-green-600",
-      features: [
-        "B2B Prospecting",
-        "Decision Maker Outreach",
-        "Meeting Scheduling",
-        "Lead Qualification",
-        "Account Research",
-        "Pipeline Development",
-      ],
-      services: [
-        "B2B Prospecting",
-        "Decision Maker Outreach",
-        "Meeting Scheduling",
-        "Lead Qualification",
-        "Account Research",
-        "Pipeline Development",
-      ],
-      stats: {
-        clients: "40+",
-        appointments: "300+",
-        conversion: "20%",
       },
     },
   ];
