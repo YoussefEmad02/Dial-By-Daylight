@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -11,11 +11,12 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { toast } from "sonner"
-import { CalendarDays, Send, CheckCircle, AlertCircle, Mic, ExternalLink, User, Briefcase, Search } from "lucide-react"
+import { CalendarDays, Send, CheckCircle, AlertCircle, Mic, ExternalLink, User, Search } from "lucide-react"
 import { format } from "date-fns"
 import { Calendar as CalendarComponent } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
+import client from "@/api/client"
 
 // Form validation schema
 const applicationSchema = z.object({
@@ -26,6 +27,7 @@ const applicationSchema = z.object({
     .string()
     .min(1, "Phone number is required")
     .regex(/^[+]?[1-9][\d\s\-()]{7,15}$/, "Please enter a valid phone number"),
+  countryCode: z.string().min(1, "Country code is required"),
   voiceMemoLink: z
     .string()
     .min(1, "Voice memo link is required")
@@ -48,6 +50,8 @@ export default function ApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [selectedDate, setSelectedDate] = useState<Date>()
+  const [selectedCountry, setSelectedCountry] = useState<{ value: string; label: string; flag: string; code: string } | null>({ value: "eg", label: "Egypt", flag: "EG", code: "+20" })
+  const [countrySearch, setCountrySearch] = useState("")
 
 
   const {
@@ -62,6 +66,34 @@ export default function ApplicationForm() {
   })
 
   const employmentStatus = watch("employmentStatus")
+
+  const countryCodes = [
+    { value: "eg", label: "Egypt", flag: "EG", code: "+20" },
+    { value: "us", label: "United States", flag: "US", code: "+1" },
+    { value: "ca", label: "Canada", flag: "CA", code: "+1" },
+    { value: "uk", label: "United Kingdom", flag: "GB", code: "+44" },
+    { value: "de", label: "Germany", flag: "DE", code: "+49" },
+    { value: "fr", label: "France", flag: "FR", code: "+33" },
+    { value: "sa", label: "Saudi Arabia", flag: "SA", code: "+966" },
+    { value: "ae", label: "UAE", flag: "AE", code: "+971" },
+    { value: "in", label: "India", flag: "IN", code: "+91" },
+  ]
+
+  useEffect(() => {
+    // Set default country code on mount
+    if (selectedCountry) {
+      setValue("countryCode", selectedCountry.code)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const handleCountryCodeChange = (countryValue: string) => {
+    const country = countryCodes.find(c => c.value === countryValue)
+    if (country) {
+      setSelectedCountry(country)
+      setValue("countryCode", country.code)
+    }
+  }
 
   const employmentOptions = [
     { value: "employed", label: "Currently Employed" },
@@ -84,11 +116,21 @@ export default function ApplicationForm() {
     setSubmitStatus("idle")
 
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      const payload = {
+        first_name: data.firstName,
+        last_name: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        country_code: data.countryCode,
+        voice_memo_link: data.voiceMemoLink,
+        available_start_date: data.availableStartDate?.toISOString(),
+        employment_status: data.employmentStatus,
+        application_source: data.applicationSource,
+        submitted_at: new Date().toISOString(),
+      }
 
-      // In a real implementation, you would send the data to your backend
-      console.log("Application submitted:", data)
+      const { error } = await client.from("applications").insert(payload)
+      if (error) throw error
 
       setSubmitStatus("success")
       toast.success("Application Submitted Successfully!", {
@@ -99,7 +141,10 @@ export default function ApplicationForm() {
       // Reset form after successful submission
       reset()
       setSelectedDate(undefined)
-    } catch {
+    } catch (error: unknown) {
+      const err = error as { message?: unknown }
+      const message = typeof err?.message === "string" ? err.message : String(error)
+      console.error("Application submission error:", message)
       setSubmitStatus("error")
       toast.error("Submission Failed", {
         description: "There was an error submitting your application. Please try again or contact support.",
@@ -186,9 +231,28 @@ export default function ApplicationForm() {
                   Phone Number <span className="text-red-500">*</span>
                 </Label>
                 <div className="flex">
-                  <div className="flex items-center px-3 border border-r-0 rounded-l-md bg-gray-50 text-sm font-medium">
-                    <span>+20</span>
-                  </div>
+                  <Select onValueChange={handleCountryCodeChange}>
+                    <SelectTrigger className={`rounded-r-none w-36 ${errors.countryCode ? "border-red-500 focus:ring-red-500" : ""}`}>
+                      <SelectValue placeholder={selectedCountry ? `${selectedCountry.code}` : "+Code"}>
+                        {selectedCountry && (
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm">{selectedCountry.code}</span>
+                          </div>
+                        )}
+                      </SelectValue>
+                    </SelectTrigger>
+                    <SelectContent className="max-h-60">
+                      {/* Optional search could be added if needed */}
+                      {countryCodes.map((country) => (
+                        <SelectItem key={country.value} value={country.value}>
+                          <div className="flex items-center gap-2">
+                            <span>{country.label}</span>
+                            <span className="ml-auto text-gray-500 text-xs">{country.code}</span>
+                          </div>
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <Input
                     id="phone"
                     type="tel"
@@ -198,6 +262,9 @@ export default function ApplicationForm() {
                     aria-describedby={errors.phone ? "phone-error" : undefined}
                   />
                 </div>
+                {errors.countryCode && (
+                  <p id="countryCode-error" className="text-red-500 text-sm" role="alert">{errors.countryCode.message}</p>
+                )}
                 {errors.phone && (
                   <p id="phone-error" className="text-red-500 text-sm" role="alert">{errors.phone.message}</p>
                 )}

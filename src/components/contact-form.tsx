@@ -29,6 +29,7 @@ import {
   Search,
 } from "lucide-react";
 import Flag from "react-flagkit";
+import client from "@/api/client";
 
 // Enhanced form validation schema with better error messages
 const formSchema = z.object({
@@ -350,10 +351,24 @@ export default function ContactForm() {
     setSubmitStatus("idle");
 
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const payload = {
+        first_name: data.firstName,
+        last_name: data.lastName,
+        work_email: data.workEmail,
+        phone: data.phone,
+        country_code: data.countryCode,
+        job_title: data.jobTitle,
+        country: data.country,
+        services: data.services,
+        monthly_budget: data.monthlyBudget,
+        project_details: data.projectDetails,
+        hear_about_us: data.hearAboutUs,
+        company_website: data.companyWebsite && data.companyWebsite.length > 0 ? data.companyWebsite : null,
+        submitted_at: new Date().toISOString(),
+      };
 
-      console.log("Enhanced form submitted:", data);
+      const { error } = await client.from("contacts").insert(payload);
+      if (error) throw error;
 
       setSubmitStatus("success");
       toast.success("Consultation Request Submitted!", {
@@ -376,8 +391,10 @@ export default function ContactForm() {
         jobTitle: 0,
         projectDetails: 0,
       });
-    } catch (error) {
-      console.error("Form submission error:", error);
+    } catch (error: unknown) {
+      const err = error as { message?: unknown }
+      const message = typeof err?.message === "string" ? err.message : String(error)
+      console.error("Form submission error:", message);
       setSubmitStatus("error");
       toast.error("Submission Failed", {
         description: "There was an error submitting your request. Please try again or contact us directly.",
