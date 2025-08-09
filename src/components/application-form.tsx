@@ -16,7 +16,7 @@ import { format } from "date-fns"
 import { Calendar as CalendarComponent } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
-import client from "@/api/client"
+import { getSupabaseClient } from "@/api/client"
 
 // Form validation schema
 const applicationSchema = z.object({
@@ -51,7 +51,6 @@ export default function ApplicationForm() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [selectedDate, setSelectedDate] = useState<Date>()
   const [selectedCountry, setSelectedCountry] = useState<{ value: string; label: string; flag: string; code: string } | null>({ value: "eg", label: "Egypt", flag: "EG", code: "+20" })
-  const [countrySearch, setCountrySearch] = useState("")
 
 
   const {
@@ -129,7 +128,8 @@ export default function ApplicationForm() {
         submitted_at: new Date().toISOString(),
       }
 
-      const { error } = await client.from("applications").insert(payload)
+      const supabase = getSupabaseClient()
+      const { error } = await supabase.from("applications").insert(payload)
       if (error) throw error
 
       setSubmitStatus("success")

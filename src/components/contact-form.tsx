@@ -29,7 +29,7 @@ import {
   Search,
 } from "lucide-react";
 import Flag from "react-flagkit";
-import client from "@/api/client";
+import { getSupabaseClient } from "@/api/client";
 
 // Enhanced form validation schema with better error messages
 const formSchema = z.object({
@@ -367,7 +367,8 @@ export default function ContactForm() {
         submitted_at: new Date().toISOString(),
       };
 
-      const { error } = await client.from("contacts").insert(payload);
+      const supabase = getSupabaseClient();
+      const { error } = await supabase.from("contacts").insert(payload);
       if (error) throw error;
 
       setSubmitStatus("success");
