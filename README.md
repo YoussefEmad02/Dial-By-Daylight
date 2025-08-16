@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dial By Daylight - Company Profile Website
 
-## Getting Started
+A modern, responsive company profile website for **Dial By Daylight**, a leading provider of high-performance outbound sales teams and customer support services. Built with Next.js 15 and modern web technologies.
 
-First, run the development server:
+**🌐 Official Website**: [https://www.dialbydaylight.com/](https://www.dialbydaylight.com/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Company Overview
+
+**Dial By Daylight** specializes in building scalable, English-fluent outbound teams that help businesses grow through cold calling, appointment setting, and customer support services. Founded in Egypt and serving clients worldwide, we deliver "Scale Faster, Pay Less, Hire Better" solutions.
+
+### Core Services
+- **Cold Calling & Appointment Setting** - Trained agents for lead generation and qualification
+- **Customer Support** - 24/7 multi-channel support services
+- **Recruiting & Vetting** - End-to-end talent acquisition and onboarding
+- **Time Tracking & Performance** - Comprehensive monitoring and analytics
+- **Fully Managed Operations** - From recruiting to payroll management
+
+## 🛠️ Technology Stack
+
+### Frontend
+- **Next.js 15** - React framework with App Router
+- **React 19** - Latest React with concurrent features
+- **TypeScript** - Type-safe development
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **Radix UI** - Accessible component primitives
+- **Lucide React** - Beautiful icon library
+
+### UI Components
+- **shadcn/ui** - Modern component library
+- **Framer Motion** - Smooth animations and transitions
+- **React Hook Form** - Form handling and validation
+- **Zod** - Schema validation
+
+### Development Tools
+- **ESLint** - Code linting and formatting
+- **PostCSS** - CSS processing
+- **Turbopack** - Fast development builds
+
+## 🎯 Key Features
+
+- **Responsive Design** - Mobile-first approach with dark/light theme support
+- **Modern UI/UX** - Beautiful gradients, animations, and micro-interactions
+- **Performance Optimized** - Fast loading with Next.js optimizations
+- **Accessibility** - WCAG compliant components and navigation
+- **SEO Ready** - Meta tags, sitemap, and robots.txt
+- **Contact Forms** - Integrated contact and application forms
+- **WhatsApp Integration** - Direct communication channel
+
+## 📱 Pages & Sections
+
+- **Home** - Hero section, services overview, company highlights
+- **About** - Company story, values, and team information
+- **Services** - Detailed service offerings and features
+- **Industries** - Industry-specific solutions
+- **Contact** - Contact form and company information
+- **Apply** - Job application form for potential candidates
+
+
+## 🏗️ Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── about/             # About page
+│   ├── apply/             # Application form page
+│   ├── contact/           # Contact page
+│   ├── industries/        # Industries page
+│   ├── services/          # Services page
+│   └── layout.tsx         # Root layout
+├── components/            # Reusable components
+│   ├── ui/               # shadcn/ui components
+│   ├── navbar.tsx        # Navigation component
+│   ├── footer.tsx        # Footer component
+│   └── ...
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utility functions
+└── public/                # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📄 License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is proprietary software for Dial By Daylight. All rights reserved.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
