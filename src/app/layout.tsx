@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import { CustomCursor } from "@/components/custom-cursor"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -113,16 +114,33 @@ export default function RootLayout({
         <meta name="application-name" content="Dial By Daylight" />
         <meta name="msapplication-TileColor" content="#3B82F6" />
         <meta name="msapplication-TileImage" content="/favicon.ico" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  
+                  if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          forcedTheme="light"
-          themes={["light"]}
+          themes={["light", "dark"]}
           defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
+          <CustomCursor />
           {children}
           <Analytics />
           <SpeedInsights />

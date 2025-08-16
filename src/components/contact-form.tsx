@@ -407,19 +407,19 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto border-0 shadow-xl bg-white/90 backdrop-blur-sm rounded-2xl">
+    <Card className="w-full max-w-4xl mx-auto border-0 shadow-xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl">
       <CardHeader className="pb-6">
-        <CardTitle className="text-3xl font-bold text-center flex items-center justify-center gap-3 mb-4">
+        <CardTitle className="text-3xl font-bold text-center flex items-center justify-center gap-3 mb-4 text-gray-900 dark:text-white">
           <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
             <Calendar className="w-6 h-6 text-white" />
           </div>
           Schedule Your Free Consultation
         </CardTitle>
-        <p className="text-gray-600 text-center text-lg">
+        <p className="text-gray-600 dark:text-gray-300 text-center text-lg">
           Tell us about your needs and we&apos;ll create a custom solution for your
           business
         </p>
-        <p className="text-sm text-gray-500 text-center mt-3">
+        <p className="text-sm text-gray-500 dark:text-gray-400 text-center mt-3">
           All fields marked with <span className="text-red-500 font-medium">*</span> are required
         </p>
       </CardHeader>
@@ -434,9 +434,9 @@ export default function ContactForm() {
           </div>
           {/* Personal Information */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
-              <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                <User className="w-5 h-5 text-blue-600" />
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white border-b-2 border-blue-200 dark:border-blue-700 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
+                <User className="w-5 h-5 text-blue-600 dark:text-blue-400" />
               </div>
               Personal Information
             </h3>
@@ -444,7 +444,7 @@ export default function ContactForm() {
             {/* Name Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="firstName" className="text-sm font-medium">
+                <Label htmlFor="firstName" className="text-sm font-medium text-gray-900 dark:text-white">
                   First Name <span className="text-red-500">*</span>
                 </Label>
                 <Input
@@ -474,7 +474,7 @@ export default function ContactForm() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="lastName" className="text-sm font-medium">
+                <Label htmlFor="lastName" className="text-sm font-medium text-gray-900 dark:text-white">
                   Last Name <span className="text-red-500">*</span>
                 </Label>
                 <Input
@@ -506,7 +506,7 @@ export default function ContactForm() {
 
             {/* Work Email */}
             <div className="space-y-2">
-              <Label htmlFor="workEmail" className="text-sm font-medium">
+              <Label htmlFor="workEmail" className="text-sm font-medium text-gray-900 dark:text-white">
                 Work Email <span className="text-red-500">*</span>
               </Label>
               <Input
@@ -539,7 +539,7 @@ export default function ContactForm() {
             {/* Country */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="country" className="text-sm font-medium">
+                <Label htmlFor="country" className="text-sm font-medium text-gray-900 dark:text-white">
                   Country <span className="text-red-500">*</span>
                 </Label>
                 <Select onValueChange={handleCountryChange}>
@@ -610,11 +610,11 @@ export default function ContactForm() {
 
               {/* Phone Number */}
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-sm font-medium">
+                <Label htmlFor="phone" className="text-sm font-medium text-gray-900 dark:text-white">
                   Phone Number <span className="text-red-500">*</span>
                 </Label>
                 <div className="flex">
-                  <div className="flex items-center px-3 border border-r-0 rounded-l-md bg-gray-50 text-sm font-medium">
+                  <div className="flex items-center px-3 border border-r-0 rounded-l-md bg-gray-50 dark:bg-gray-700 text-sm font-medium text-gray-900 dark:text-white">
                     <span>{selectedCountryCode}</span>
                   </div>
                   <Input
@@ -647,16 +647,16 @@ export default function ContactForm() {
 
           {/* Company Information */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
-              <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                <Building className="w-5 h-5 text-green-600" />
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white border-b-2 border-blue-200 dark:border-blue-700 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
+                <Building className="w-5 h-5 text-green-600 dark:text-green-400" />
               </div>
               Company Information
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="companyWebsite" className="text-sm font-medium">
+                <Label htmlFor="companyWebsite" className="text-sm font-medium text-gray-900 dark:text-white">
                   Company Website
                 </Label>
                 <Input
@@ -688,7 +688,7 @@ export default function ContactForm() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="jobTitle" className="text-sm font-medium">
+                <Label htmlFor="jobTitle" className="text-sm font-medium text-gray-900 dark:text-white">
                   Job Title <span className="text-red-500">*</span>
                 </Label>
                 <Input
@@ -721,16 +721,16 @@ export default function ContactForm() {
 
           {/* Services & Budget */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
-              <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                <DollarSign className="w-5 h-5 text-purple-600" />
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white border-b-2 border-blue-200 dark:border-blue-700 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
+                <DollarSign className="w-5 h-5 text-purple-600 dark:text-purple-400" />
               </div>
               Services & Budget
             </h3>
 
             {/* Services Selection */}
             <div className="space-y-3">
-              <Label className="text-sm font-medium">
+              <Label className="text-sm font-medium text-gray-900 dark:text-white">
                 What Services Are You Looking For?{" "}
                 <span className="text-red-500">*</span>
               </Label>
@@ -746,7 +746,7 @@ export default function ContactForm() {
                     />
                     <Label
                       htmlFor={service.id}
-                      className="text-sm font-normal cursor-pointer"
+                      className="text-sm font-normal cursor-pointer text-gray-900 dark:text-white"
                     >
                       {service.label}
                     </Label>
@@ -762,7 +762,7 @@ export default function ContactForm() {
 
             {/* Monthly Budget */}
             <div className="space-y-2">
-              <Label htmlFor="monthlyBudget" className="text-sm font-medium">
+              <Label htmlFor="monthlyBudget" className="text-sm font-medium text-gray-900 dark:text-white">
                 Please select your estimated monthly budget for the project{" "}
                 <span className="text-red-500">*</span>
               </Label>
@@ -804,15 +804,15 @@ export default function ContactForm() {
 
           {/* Project Details */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
-              <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                <Calendar className="w-5 h-5 text-orange-600" />
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white border-b-2 border-blue-200 dark:border-blue-700 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center">
+                <Calendar className="w-5 h-5 text-orange-600 dark:text-orange-400" />
               </div>
               Project Details
             </h3>
 
             <div className="space-y-2">
-              <Label htmlFor="projectDetails" className="text-sm font-medium">
+              <Label htmlFor="projectDetails" className="text-sm font-medium text-gray-900 dark:text-white">
                 Tell us more about what you need!{" "}
                 <span className="text-red-500">*</span>
               </Label>
@@ -847,15 +847,15 @@ export default function ContactForm() {
 
           {/* How did you hear about us */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-gray-900 border-b-2 border-blue-200 pb-3 flex items-center gap-3">
-              <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
-                <Search className="w-5 h-5 text-indigo-600" />
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white border-b-2 border-blue-200 dark:border-blue-700 pb-3 flex items-center gap-3">
+              <div className="w-8 h-8 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center">
+                <Search className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
               </div>
               How did you find us?
             </h3>
 
             <div className="space-y-3">
-              <Label className="text-sm font-medium">
+              <Label className="text-sm font-medium text-gray-900 dark:text-white">
                 How did you hear about us?{" "}
                 <span className="text-red-500">*</span>
               </Label>
@@ -871,7 +871,7 @@ export default function ContactForm() {
                     <RadioGroupItem value={option.value} id={option.value} />
                     <Label
                       htmlFor={option.value}
-                      className="text-sm font-normal cursor-pointer"
+                      className="text-sm font-normal cursor-pointer text-gray-900 dark:text-white"
                     >
                       {option.label}
                     </Label>
@@ -912,24 +912,24 @@ export default function ContactForm() {
 
           {/* Form Status Indicator */}
           {isSubmitting && (
-            <div className="flex items-center justify-center p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <div className="flex items-center justify-center p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg">
               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 mr-2"></div>
-              <span className="text-blue-700 text-sm">Processing your request...</span>
+              <span className="text-blue-700 dark:text-blue-300 text-sm">Processing your request...</span>
             </div>
           )}
 
           {/* Success/Error Messages */}
           {submitStatus === "success" && (
             <div
-              className="flex items-center justify-center p-6 bg-green-50 border border-green-200 rounded-lg"
+              className="flex items-center justify-center p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg"
               role="alert"
             >
-              <CheckCircle className="w-6 h-6 text-green-600 mr-3" />
+              <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400 mr-3" />
               <div className="text-center">
-                <p className="text-green-800 font-medium">
+                <p className="text-green-800 dark:text-green-200 font-medium">
                   Consultation Request Submitted!
                 </p>
-                <p className="text-green-700 text-sm mt-1">
+                <p className="text-green-700 dark:text-green-300 text-sm mt-1">
                   We&apos;ll contact you within 24 hours to schedule your free
                   consultation.
                 </p>
@@ -939,13 +939,13 @@ export default function ContactForm() {
 
           {submitStatus === "error" && (
             <div
-              className="flex items-center justify-center p-6 bg-red-50 border border-red-200 rounded-lg"
+              className="flex items-center justify-center p-6 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-lg"
               role="alert"
             >
-              <AlertCircle className="w-6 h-6 text-red-600 mr-3" />
+              <AlertCircle className="w-6 h-6 text-red-600 dark:text-red-400 mr-3" />
               <div className="text-center">
-                <p className="text-red-800 font-medium">Submission Failed</p>
-                <p className="text-red-700 text-sm mt-1">
+                <p className="text-red-800 dark:text-red-200 font-medium">Submission Failed</p>
+                <p className="text-red-700 dark:text-red-300 text-sm mt-1">
                   Please check your information and try again, or contact us
                   directly.
                 </p>

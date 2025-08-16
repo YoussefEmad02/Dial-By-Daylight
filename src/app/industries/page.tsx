@@ -34,18 +34,18 @@ export default function IndustriesPage() {
       description:
         "Comprehensive support for real estate professionals and recruiting teams.",
       subtitle: "Our core niche",
-      badge: "Core Niche",
+      badge: "Recruiting Focus",
       icon: Building,
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
       features: [
-        "Broker-to-agent recruiting (SmartSetter-style campaigns)",
+        "Broker-to-agent recruiting",
         "Buyer/seller lead outreach (Zillow, PPC, FSBO, expireds, etc.)",
         "Database reactivation",
         "ISA-style appointment setting",
       ],
       services: [
-        "Broker-to-agent recruiting (SmartSetter-style campaigns)",
+        "Broker-to-agent recruiting",
         "Buyer/seller lead outreach (Zillow, PPC, FSBO, expireds, etc.)",
         "Database reactivation",
         "ISA-style appointment setting",
@@ -62,7 +62,7 @@ export default function IndustriesPage() {
       description:
         "High-volume outreach and appointment setting for solar companies.",
       subtitle: "Sales teams thrive on volume — we deliver it",
-      badge: "High Volume",
+      badge: "Homeowner Leads",
       icon: Sun,
       color: "yellow",
       gradient: "from-yellow-500 to-orange-500",
@@ -80,7 +80,7 @@ export default function IndustriesPage() {
       ],
       stats: {
         clients: "25+",
-        appointments: "400+",
+        appointments: "300+",
         conversion: "18%",
       },
     },
@@ -90,7 +90,7 @@ export default function IndustriesPage() {
       description:
         "Ongoing support for service-based businesses with recurring revenue models.",
       subtitle: "Perfect for recurring services that require ongoing touchpoints",
-      badge: "Recurring",
+      badge: "Retention & Renewals",
       icon: Shield,
       color: "green",
       gradient: "from-green-500 to-green-600",
@@ -107,9 +107,9 @@ export default function IndustriesPage() {
         "Post-sale support & follow-up",
       ],
       stats: {
-        clients: "35+",
-        appointments: "300+",
-        conversion: "22%",
+        clients: "30+",
+        appointments: "250+",
+        conversion: "20%",
       },
     },
     {
@@ -118,7 +118,7 @@ export default function IndustriesPage() {
       description:
         "Lead generation and appointment setting for healthcare and insurance professionals.",
       subtitle: "Licensed agents close. We get them on the phone",
-      badge: "Licensed",
+      badge: "Compliance Ready",
       icon: Heart,
       color: "red",
       gradient: "from-red-500 to-pink-500",
@@ -136,8 +136,8 @@ export default function IndustriesPage() {
       ],
       stats: {
         clients: "20+",
-        appointments: "250+",
-        conversion: "28%",
+        appointments: "200+",
+        conversion: "24%",
       },
     },
     {
@@ -146,7 +146,7 @@ export default function IndustriesPage() {
       description:
         "Calendar filling and lead management for home improvement contractors.",
       subtitle: "Contractors and closers need help filling the calendar",
-      badge: "Contractors",
+      badge: "Contractor Outreach",
       icon: Wrench,
       color: "orange",
       gradient: "from-orange-500 to-red-500",
@@ -164,8 +164,8 @@ export default function IndustriesPage() {
       ],
       stats: {
         clients: "30+",
-        appointments: "350+",
-        conversion: "20%",
+        appointments: "250+",
+        conversion: "19%",
       },
     },
     {
@@ -174,7 +174,7 @@ export default function IndustriesPage() {
       description:
         "Premium appointment setting and lead generation for high-value service providers.",
       subtitle: "Premium Service Providers",
-      badge: "High Value",
+      badge: "Qualified Bookings",
       icon: Star,
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
@@ -195,9 +195,9 @@ export default function IndustriesPage() {
         "ROI Tracking",
       ],
       stats: {
-        clients: "30+",
-        appointments: "200+",
-        conversion: "25%",
+        clients: "20+",
+        appointments: "150+",
+        conversion: "22%",
       },
     },
   ];
@@ -308,13 +308,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* Enhanced Industries Grid */}
-      <section className="py-20 bg-gray-50" data-section="industries" id="industries">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900" data-section="industries" id="industries">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 transition-all duration-1500 ${isSectionVisible('industries') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-all duration-1500 ${isSectionVisible('industries') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               Our Industry Solutions
             </h2>
-            <p className={`text-xl text-gray-600 max-w-3xl mx-auto transition-all duration-1500 ${isSectionVisible('industries') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <p className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-all duration-1500 ${isSectionVisible('industries') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               Specialized teams trained for your industry&apos;s unique challenges and opportunities
             </p>
           </div>
@@ -323,7 +323,7 @@ export default function IndustriesPage() {
             {industries.map((industry, index) => (
               <Card
                 key={index}
-                className={`group relative hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('industries') ? `animate-slide-in-${index % 2 === 0 ? 'left' : 'right'}` : `opacity-0 translate-x-[${index % 2 === 0 ? '-100px' : '100px'}]`}`}
+                className={`group relative hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('industries') ? `animate-slide-in-${index % 2 === 0 ? 'left' : 'right'}` : `opacity-0 translate-x-[${index % 2 === 0 ? '-100px' : '100px'}]`}`}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-500/5 to-gray-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <CardHeader className="pb-4 relative">
@@ -333,17 +333,17 @@ export default function IndustriesPage() {
                     >
                       <industry.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <Badge variant="secondary" className="text-xs font-medium bg-blue-100 text-blue-700">
+                    <Badge variant="secondary" className="text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
                       {industry.badge}
                     </Badge>
                   </div>
-                  <CardTitle className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-300">
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                     {industry.title}
                   </CardTitle>
-                  <p className="text-blue-600 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
+                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                     {industry.subtitle}
                   </p>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-sm sm:text-base">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">
                     {industry.description}
                   </p>
                 </CardHeader>
@@ -351,7 +351,7 @@ export default function IndustriesPage() {
                 <CardContent className="pt-0 relative flex flex-col h-full">
                   <div className="flex-1">
                     <div className="mb-4 sm:mb-6">
-                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-2" />
                         We Support:
                       </h4>
@@ -359,7 +359,7 @@ export default function IndustriesPage() {
                         {industry.services.map((service, serviceIndex) => (
                           <li key={serviceIndex} className="flex items-start group/item">
                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2 sm:mr-3 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300"></div>
-                            <span className="text-gray-600 text-xs sm:text-sm leading-relaxed group-hover/item:text-gray-700 transition-colors duration-300">
+                            <span className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed group-hover/item:text-gray-700 dark:group-hover/item:text-gray-200 transition-colors duration-300">
                               {service}
                             </span>
                           </li>
@@ -376,7 +376,7 @@ export default function IndustriesPage() {
                     </Link>
                     <Button 
                       variant="outline" 
-                      className="flex-1 bg-transparent hover:bg-gray-50 transition-colors duration-300 cursor-pointer"
+                      className="flex-1 bg-transparent hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-300 cursor-pointer"
                       onClick={() => {
                         setActiveIndustry(industry.id);
                         document.getElementById('spotlight')?.scrollIntoView({ behavior: 'smooth' });
@@ -396,10 +396,10 @@ export default function IndustriesPage() {
       <section className="py-20" data-section="benefits" id="benefits">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 transition-all duration-1500 ${isSectionVisible('benefits') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-all duration-1500 ${isSectionVisible('benefits') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               Why Choose Our Industry Solutions
             </h2>
-            <p className={`text-xl text-gray-600 max-w-3xl mx-auto transition-all duration-1500 ${isSectionVisible('benefits') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <p className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-all duration-1500 ${isSectionVisible('benefits') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               We bring specialized expertise and proven methodologies to every industry we serve
             </p>
           </div>
@@ -408,17 +408,17 @@ export default function IndustriesPage() {
             {benefits.map((benefit, index) => (
               <Card
                 key={index}
-                className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('benefits') ? `animate-slide-in-${index % 2 === 0 ? 'left' : 'right'}` : `opacity-0 translate-x-[${index % 2 === 0 ? '-100px' : '100px'}]`}`}
+                className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('benefits') ? `animate-slide-in-${index % 2 === 0 ? 'left' : 'right'}` : `opacity-0 translate-x-[${index % 2 === 0 ? '-100px' : '100px'}]`}`}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-500/5 to-gray-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <CardContent className="p-6 sm:p-8 relative">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
                     <benefit.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-sm sm:text-base">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">
                     {benefit.description}
                   </p>
                 </CardContent>
@@ -429,7 +429,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Enhanced Custom Solutions Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50" data-section="custom" id="custom">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800" data-section="custom" id="custom">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Card className={`max-w-4xl mx-auto border-0 shadow-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden transition-all duration-1500 ${isSectionVisible('custom') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
@@ -448,7 +448,7 @@ export default function IndustriesPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/contact">
-                    <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <Button size="lg" className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 px-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                       Book a Free Consult <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </Link>
@@ -463,41 +463,41 @@ export default function IndustriesPage() {
       <section className="py-20" data-section="metrics" id="metrics">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               Proven Results Across Industries
             </h2>
-            <p className={`text-xl text-gray-600 max-w-3xl mx-auto transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <p className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               Our industry-focused approach delivers consistent results for businesses of all sizes
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            <Card className={`group relative text-center border-0 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <Card className={`group relative text-center border-0 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-6 sm:p-8 relative">
-                <div className="text-3xl sm:text-4xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors duration-300">7+</div>
-                <div className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 text-sm sm:text-base">Industries Served</div>
+                <div className="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">7+</div>
+                <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">Industries Served</div>
               </CardContent>
             </Card>
-            <Card className={`group relative text-center border-0 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <Card className={`group relative text-center border-0 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-green-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-6 sm:p-8 relative">
-                <div className="text-3xl sm:text-4xl font-bold text-green-600 mb-2 group-hover:text-green-700 transition-colors duration-300">95%</div>
-                <div className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 text-sm sm:text-base">Client Retention Rate</div>
+                <div className="text-3xl sm:text-4xl font-bold text-green-600 dark:text-green-400 mb-2 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors duration-300">95%</div>
+                <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">Client Retention Rate</div>
               </CardContent>
             </Card>
-            <Card className={`group relative text-center border-0 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <Card className={`group relative text-center border-0 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-purple-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-6 sm:p-8 relative">
-                <div className="text-3xl sm:text-4xl font-bold text-purple-600 mb-2 group-hover:text-purple-700 transition-colors duration-300">24/7</div>
-                <div className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 text-sm sm:text-base">Coverage Available</div>
+                <div className="text-3xl sm:text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">24/7</div>
+                <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">Coverage Available</div>
               </CardContent>
             </Card>
-            <Card className={`group relative text-center border-0 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 bg-white/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <Card className={`group relative text-center border-0 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('metrics') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-6 sm:p-8 relative">
-                <div className="text-3xl sm:text-4xl font-bold text-orange-600 mb-2 group-hover:text-orange-700 transition-colors duration-300">Fast</div>
-                <div className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 text-sm sm:text-base">Team Deployment</div>
+                <div className="text-3xl sm:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2 group-hover:text-orange-700 dark:group-hover:text-orange-300 transition-colors duration-300">Fast</div>
+                <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">Team Deployment</div>
               </CardContent>
             </Card>
           </div>
@@ -521,7 +521,7 @@ export default function IndustriesPage() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 px-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               >
                 Start Your Project
               </Button>
@@ -531,7 +531,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Enhanced Industry Spotlight Tabs */}
-      <section className="py-16 bg-gray-50" data-section="spotlight" id="spotlight">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900" data-section="spotlight" id="spotlight">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 transition-all duration-1500 ${isSectionVisible('spotlight') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
@@ -579,46 +579,46 @@ export default function IndustriesPage() {
                       <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
                         {industry.title}
                       </h2>
-                      <p className="text-gray-600 text-sm sm:text-base">{industry.description}</p>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">{industry.description}</p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <div className="text-center">
-                      <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600">
+                      <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600 dark:text-blue-400">
                         {industry.stats.clients}
                       </div>
-                      <div className="text-xs sm:text-sm text-gray-600">
+                      <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                         Active Clients
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-lg sm:text-xl lg:text-2xl font-bold text-green-600">
+                      <div className="text-lg sm:text-xl lg:text-2xl font-bold text-green-600 dark:text-green-400">
                         {industry.stats.appointments}
                       </div>
-                      <div className="text-xs sm:text-sm text-gray-600">
+                      <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                         Appointments Set
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-lg sm:text-xl lg:text-2xl font-bold text-purple-600">
+                      <div className="text-lg sm:text-xl lg:text-2xl font-bold text-purple-600 dark:text-purple-400">
                         {industry.stats.conversion}
                       </div>
-                      <div className="text-xs sm:text-sm text-gray-600">
+                      <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                         Avg. Conversion
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       Key Services
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {industry.features.map((feature, index) => (
                         <div key={index} className="flex items-center group/item">
-                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300" />
-                          <span className="text-gray-600 text-sm group-hover/item:text-gray-700 transition-colors duration-300">
+                          <CheckCircle className="w-5 h-5 text-green-500 dark:text-green-400 mr-3 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300" />
+                          <span className="text-gray-600 dark:text-gray-300 text-sm group-hover/item:text-gray-700 dark:group-hover/item:text-gray-200 transition-colors duration-300">
                             {feature}
                           </span>
                         </div>
@@ -636,47 +636,47 @@ export default function IndustriesPage() {
                 </div>
 
                 <div className="relative">
-                  <Card className="border-0 shadow-xl bg-white/95 backdrop-blur-sm">
+                  <Card className="border-0 shadow-xl bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm">
                     <CardContent className="p-8">
                       <div className="text-center mb-6">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                           Success Story
                         </h3>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-gray-600 dark:text-gray-300 text-sm">
                           Real results from our {industry.title} clients
                         </p>
                       </div>
 
                       <div className="space-y-4">
-                        <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-300">
-                          <span className="text-gray-700">
+                        <div className="flex items-center justify-between p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300">
+                          <span className="text-gray-700 dark:text-gray-300">
                             Monthly Appointments
                           </span>
-                          <span className="font-semibold text-blue-600">
+                          <span className="font-semibold text-blue-600 dark:text-blue-400">
                             150+
                           </span>
                         </div>
-                        <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors duration-300">
-                          <span className="text-gray-700">Conversion Rate</span>
-                          <span className="font-semibold text-green-600">
+                        <div className="flex items-center justify-between p-4 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors duration-300">
+                          <span className="text-gray-700 dark:text-gray-300">Conversion Rate</span>
+                          <span className="font-semibold text-green-600 dark:text-green-400">
                             {industry.stats.conversion}
                           </span>
                         </div>
-                        <div className="flex items-center justify-between p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors duration-300">
-                          <span className="text-gray-700">ROI Improvement</span>
-                          <span className="font-semibold text-purple-600">
+                        <div className="flex items-center justify-between p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors duration-300">
+                          <span className="text-gray-700 dark:text-gray-300">ROI Improvement</span>
+                          <span className="font-semibold text-purple-600 dark:text-purple-400">
                             300%
                           </span>
                         </div>
                       </div>
 
-                      <div className="mt-6 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
-                        <p className="text-sm text-gray-600 italic">
+                      <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/70 transition-colors duration-300">
+                        <p className="text-sm text-gray-600 dark:text-gray-300 italic">
                           &quot;Dial By Daylight transformed our outbound operations.
                           Their specialized approach for our industry has
                           delivered exceptional results.&quot;
                         </p>
-                        <p className="text-xs text-gray-500 mt-2">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
                           - Industry Client
                         </p>
                       </div>

@@ -70,7 +70,7 @@ export default function AboutPage() {
   const isSectionVisible = (sectionId: string) => visibleSections.has(sectionId)
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden relative">
       <Navbar />
 
       {/* Hero Section */}
@@ -122,14 +122,75 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Founders */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-900" data-section="founders" id="founders">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className={`text-center mb-12 sm:mb-16 transition-all duration-1500 ${
+              isSectionVisible('founders') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'
+            }`}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Our Founders</h2>
+            <p className="text-xl sm:text-2xl text-gray-900 dark:text-white font-semibold mb-6">Started on the phones. Built something bigger.</p>
+            <div className="max-w-3xl mx-auto space-y-4 text-gray-600 dark:text-gray-300 text-lg">
+              <p>
+                Dial By Daylight was founded by two operators who learned this game the hard way — one cold call at a time.
+                <span className="relative group inline-flex items-center mx-1 name-burst">
+                  <span className="px-2 py-0.5 rounded-md bg-gray-900/5 dark:bg-white/10 text-gray-900 dark:text-white border border-transparent transition-all duration-300 group-hover:bg-gray-900/10 dark:group-hover:bg-white/15 group-hover:border-primary-foreground group-hover:-translate-y-0.5 group-hover:scale-[1.03]">
+                    Youssef Hesham
+                  </span>
+                  <span className="burst-star" aria-hidden></span>
+                  <span className="pointer-events-none absolute left-0 -bottom-0.5 h-0.5 w-0 bg-primary-foreground transition-all duration-300 group-hover:w-full"></span>
+                </span>
+                and
+                <span className="relative group inline-flex items-center mx-1 name-burst">
+                  <span className="px-2 py-0.5 rounded-md bg-gray-900/5 dark:bg-white/10 text-gray-900 dark:text-white border border-transparent transition-all duration-300 group-hover:bg-gray-900/10 dark:group-hover:bg-white/15 group-hover:border-primary-foreground group-hover:-translate-y-0.5 group-hover:scale-[1.03]">
+                    Ahmed Osama
+                  </span>
+                  <span className="burst-star" aria-hidden></span>
+                  <span className="pointer-events-none absolute left-0 -bottom-0.5 h-0.5 w-0 bg-primary-foreground transition-all duration-300 group-hover:w-full"></span>
+                </span>
+                started as agents dialing hundreds of leads a day, refining scripts, testing rebuttals, and turning noise into results.
+              </p>
+              <p>
+                We didn’t read this in a playbook. We lived it. And we saw the gap: bloated call centers, poor training, zero
+                accountability. So we built what we always wished existed — a lean, high-performance outbound engine built for
+                speed, quality, and relentless execution.
+              </p>
+              <p>
+                We know what it’s like to be on the front lines. To chase results. To fight for every booked call. That’s why
+                everything we build — from recruitment to reporting — is designed to empower agents, eliminate waste, and deliver
+                measurable ROI to clients.
+              </p>
+              <div className="pt-2">
+                <p className="font-semibold text-gray-900 dark:text-white">We didn’t inherit a system.<br/>We engineered it.</p>
+                <p className="text-gray-600 dark:text-gray-300">Dial By Daylight is the BPO built by people who’ve actually done the work.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Individual founder cards removed per request */}
+
+          <div
+            className={`mt-10 text-center transition-all duration-1500 ${
+              isSectionVisible('founders') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'
+            }`}
+          >
+            <p className="text-lg sm:text-xl text-primary font-semibold">
+              From individual top performers to a remote-first BPO — engineered for speed, quality, and measurable growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Company Image */}
       <section className="py-16" data-section="company-image" id="company-image">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-black mb-3 sm:mb-4 px-4 transition-all duration-1500 ${isSectionVisible('company-image') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4 transition-all duration-1500 ${isSectionVisible('company-image') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               Our Global Team
             </h2>
-            <p className={`text-lg sm:text-xl text-gray-600 dark:text-black max-w-3xl mx-auto px-4 transition-all duration-1500 ${isSectionVisible('company-image') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <p className={`text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4 transition-all duration-1500 ${isSectionVisible('company-image') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               A diverse, talented team working remotely to deliver exceptional results
             </p>
           </div>
@@ -170,31 +231,31 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900" data-section="mission-vision" id="mission-vision">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-white backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('mission-vision') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('mission-vision') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-6 sm:p-8 relative">
                 <div className="flex items-center mb-4 sm:mb-6">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4 transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
                     <Target className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-black group-hover:text-blue-600 dark:group-hover:text-blue-600 transition-colors duration-500">Our Mission</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-500">Our Mission</h2>
                 </div>
-                <p className="text-gray-600 dark:text-black text-base sm:text-lg leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-500">
+                <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-500">
                   To empower businesses with cost-effective, high-performance outbound teams — built fast, managed well, and driven by results. We believe the future of outsourcing is lean, global, and quality-first. Our mission is to bring that future to life — one cold call at a time.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-white backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('mission-vision') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('mission-vision') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-purple-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-6 sm:p-8 relative">
                 <div className="flex items-center mb-4 sm:mb-6">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Eye className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-black group-hover:text-purple-600 dark:group-hover:text-purple-600 transition-colors duration-300">Our Vision</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">Our Vision</h2>
                 </div>
-                <p className="text-gray-600 dark:text-black text-base sm:text-lg leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-300">
+                <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                   To become the go-to outbound team for modern businesses — blending global talent with startup speed, operational discipline, and ruthless execution. We envision a world where remote voice agents are more trusted, trained, and effective than in-house teams — and we&apos;re building the systems to make that happen.
                 </p>
               </CardContent>
@@ -207,22 +268,22 @@ export default function AboutPage() {
       <section className="py-20" data-section="our-edge" id="our-edge">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-black mb-4 transition-all duration-1500 ${isSectionVisible('our-edge') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>Our Edge</h2>
-            <p className={`text-xl text-gray-600 dark:text-black max-w-4xl mx-auto leading-relaxed transition-all duration-1500 ${isSectionVisible('our-edge') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-all duration-1500 ${isSectionVisible('our-edge') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>Our Edge</h2>
+            <p className={`text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed transition-all duration-1500 ${isSectionVisible('our-edge') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               We move fast. We keep it lean. And we care more about real output — qualified appointments, booked calls, consistent performance — than fancy dashboards or bloated call center fluff.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {companyValues.map((value, index) => (
-              <Card key={index} className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-white backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('our-edge') ? `animate-slide-in-${index % 2 === 0 ? 'left' : 'right'}` : `opacity-0 translate-x-[${index % 2 === 0 ? '-100px' : '100px'}]`}`}>
+              <Card key={index} className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${isSectionVisible('our-edge') ? `animate-slide-in-${index % 2 === 0 ? 'left' : 'right'}` : `opacity-0 translate-x-[${index % 2 === 0 ? '-100px' : '100px'}]`}`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-500/5 to-gray-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <CardContent className="p-8 relative">
                   <div className={`w-16 h-16 bg-gradient-to-br from-${value.color}-500 to-${value.color}-600 rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
                     <value.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-black mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-500">{value.title}</h3>
-                  <p className="text-gray-600 dark:text-black leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-500">{value.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-500">{value.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-500">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -234,24 +295,24 @@ export default function AboutPage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-900" data-section="our-process" id="our-process">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-black mb-4 transition-all duration-1000 ${isSectionVisible('our-process') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>Our Process</h2>
-            <p className={`text-xl text-gray-600 dark:text-black max-w-3xl mx-auto transition-all duration-1000 ${isSectionVisible('our-process') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>Every agent goes through a tight funnel to ensure quality delivery under pressure.</p>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-all duration-1000 ${isSectionVisible('our-process') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>Our Process</h2>
+            <p className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-all duration-1000 ${isSectionVisible('our-process') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>Every agent goes through a tight funnel to ensure quality delivery under pressure.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="relative">
-                <Card className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-white backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('our-process') ? `animate-slide-in-left-delay-${index}` : 'opacity-0 translate-x-[-100px]'}`}>
+                <Card className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('our-process') ? `animate-slide-in-left-delay-${index}` : 'opacity-0 translate-x-[-100px]'}`}>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <CardContent className="p-8 relative">
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">{step.icon}</div>
-                    <div className="text-sm font-bold text-blue-600 dark:text-blue-600 mb-2 group-hover:text-blue-700 dark:group-hover:text-blue-700 transition-colors duration-300">STEP {step.step}</div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-black group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-300">{step.title}</h3>
+                    <div className="text-sm font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">STEP {step.step}</div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">{step.title}</h3>
                   </CardContent>
                 </Card>
                 {index < processSteps.length - 1 && (
                   <div className={`hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 transition-all duration-1000 ${isSectionVisible('our-process') ? `animate-slide-in-left-delay-${index + 1}` : 'opacity-0 translate-x-[-100px]'}`}>
-                    <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-blue-500 transition-colors duration-300" />
+                    <ArrowRight className="w-6 h-6 text-gray-400 dark:text-gray-500 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300" />
                   </div>
                 )}
               </div>
@@ -264,59 +325,59 @@ export default function AboutPage() {
       <section className="py-20" data-section="client-operations" id="client-operations">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-white backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('client-operations') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('client-operations') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-green-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-8 relative">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Users className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-black group-hover:text-green-600 dark:group-hover:text-green-600 transition-colors duration-300">Client Focus</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">Client Focus</h2>
                 </div>
-                <p className="text-gray-600 dark:text-black text-lg leading-relaxed mb-6 group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-300">
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                   We currently serve clients in real estate, high-ticket services, and B2B lead generation — with our main delivery partner being SmartSetter, a fast-growing platform in the recruiting space.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center group/item">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3 group-hover/item:scale-110 transition-transform duration-300" />
-                    <span className="text-gray-600 dark:text-black group-hover/item:text-gray-700 dark:group-hover/item:text-gray-800 transition-colors duration-300">Real Estate</span>
+                    <span className="text-gray-600 dark:text-gray-300 group-hover/item:text-gray-700 dark:group-hover/item:text-gray-200 transition-colors duration-300">Real Estate</span>
                   </div>
                   <div className="flex items-center group/item">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3 group-hover/item:scale-110 transition-transform duration-300" />
-                    <span className="text-gray-600 dark:text-black group-hover/item:text-gray-700 dark:group-hover/item:text-gray-800 transition-colors duration-300">High-Ticket Services</span>
+                    <span className="text-gray-600 dark:text-gray-300 group-hover/item:text-gray-700 dark:group-hover/item:text-gray-200 transition-colors duration-300">High-Ticket Services</span>
                   </div>
                   <div className="flex items-center group/item">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3 group-hover/item:scale-110 transition-transform duration-300" />
-                    <span className="text-gray-600 dark:text-black group-hover/item:text-gray-700 dark:group-hover/item:text-gray-800 transition-colors duration-300">B2B Lead Generation</span>
+                    <span className="text-gray-600 dark:text-gray-300 group-hover/item:text-gray-700 dark:group-hover/item:text-gray-200 transition-colors duration-300">B2B Lead Generation</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-white backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('client-operations') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <Card className={`group relative hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1000 ${isSectionVisible('client-operations') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardContent className="p-8 relative">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mr-4 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Award className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-black group-hover:text-orange-600 dark:group-hover:text-orange-600 transition-colors duration-300">Operational Excellence</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">Operational Excellence</h2>
                 </div>
-                <p className="text-gray-600 dark:text-black text-lg leading-relaxed mb-6 group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-300">
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                   Our core team runs operations, recruitment, training, payroll, and dialer setup — all in-house. That gives us tight control over quality and speed, without adding layers of bureaucracy.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center group/item">
                     <CheckCircle className="w-5 h-5 text-orange-500 mr-3 group-hover/item:scale-110 transition-transform duration-300" />
-                    <span className="text-gray-600 dark:text-black group-hover/item:text-gray-700 dark:group-hover/item:text-gray-800 transition-colors duration-300">Operations Management</span>
+                    <span className="text-gray-600 dark:text-gray-300 group-hover/item:text-gray-700 dark:group-hover/item:text-gray-200 transition-colors duration-300">Operations Management</span>
                   </div>
                   <div className="flex items-center group/item">
                     <CheckCircle className="w-5 h-5 text-orange-500 mr-3 group-hover/item:scale-110 transition-transform duration-300" />
-                    <span className="text-gray-600 dark:text-black group-hover/item:text-gray-700 dark:group-hover/item:text-gray-800 transition-colors duration-300">Recruitment & Training</span>
+                    <span className="text-gray-600 dark:text-gray-300 group-hover/item:text-gray-700 dark:group-hover/item:text-gray-200 transition-colors duration-300">Recruitment & Training</span>
                   </div>
                   <div className="flex items-center group/item">
                     <CheckCircle className="w-5 h-5 text-orange-500 mr-3 group-hover/item:scale-110 transition-transform duration-300" />
-                    <span className="text-gray-600 dark:text-black group-hover/item:text-gray-700 dark:group-hover/item:text-gray-800 transition-colors duration-300">Payroll & Dialer Setup</span>
+                    <span className="text-gray-600 dark:text-gray-300 group-hover/item:text-gray-700 dark:group-hover/item:text-gray-200 transition-colors duration-300">Payroll & Dialer Setup</span>
                   </div>
                 </div>
               </CardContent>
@@ -361,48 +422,48 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800" data-section="company-stats" id="company-stats">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-black mb-4 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               Our Impact
             </h2>
-            <p className={`text-xl text-gray-600 dark:text-black max-w-3xl mx-auto transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <p className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               Numbers that speak to our commitment to excellence and global reach
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className={`group relative bg-white dark:bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 dark:border-gray-200 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <div className={`group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 dark:border-gray-700 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative text-center">
-                <div className="text-5xl font-bold text-blue-600 dark:text-blue-600 mb-3 group-hover:text-blue-700 dark:group-hover:text-blue-700 transition-colors duration-300">100%</div>
-                <div className="text-gray-600 dark:text-black group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-300 font-medium">English Fluent Agents</div>
-                <div className="text-sm text-gray-500 dark:text-gray-600 mt-2">Native-level communication</div>
+                <div className="text-5xl font-bold text-blue-600 dark:text-blue-400 mb-3 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">100%</div>
+                <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 font-medium">English Fluent Agents</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">Native-level communication</div>
               </div>
             </div>
             
-            <div className={`group relative bg-white dark:bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 dark:border-gray-200 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <div className={`group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 dark:border-gray-700 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-green-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative text-center">
-                <div className="text-5xl font-bold text-green-600 dark:text-green-600 mb-3 group-hover:text-green-700 dark:group-hover:text-green-700 transition-colors duration-300">24/7</div>
-                <div className="text-gray-600 dark:text-black group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-300 font-medium">Operations Coverage</div>
-                <div className="text-sm text-gray-500 dark:text-gray-600 mt-2">Round-the-clock support</div>
+                <div className="text-5xl font-bold text-green-600 dark:text-green-400 mb-3 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors duration-300">24/7</div>
+                <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 font-medium">Operations Coverage</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">Round-the-clock support</div>
               </div>
             </div>
             
-            <div className={`group relative bg-white dark:bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 dark:border-gray-200 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
+            <div className={`group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 dark:border-gray-700 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-purple-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative text-center">
-                <div className="text-5xl font-bold text-purple-600 dark:text-purple-600 mb-3 group-hover:text-purple-700 dark:group-hover:text-purple-700 transition-colors duration-300">3+</div>
-                <div className="text-gray-600 dark:text-black group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-300 font-medium">Industries Served</div>
-                <div className="text-sm text-gray-500 dark:text-gray-600 mt-2">Diverse expertise</div>
+                <div className="text-5xl font-bold text-purple-600 dark:text-purple-400 mb-3 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">3+</div>
+                <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 font-medium">Industries Served</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">Diverse expertise</div>
               </div>
             </div>
             
-            <div className={`group relative bg-white dark:bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 dark:border-gray-200 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
+            <div className={`group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-gray-100 dark:border-gray-700 transition-all duration-1000 ${isSectionVisible('company-stats') ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-orange-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative text-center">
-                <div className="text-5xl font-bold text-orange-600 dark:text-orange-600 mb-3 group-hover:text-orange-700 dark:group-hover:text-orange-700 transition-colors duration-300">Fast</div>
-                <div className="text-gray-600 dark:text-black group-hover:text-gray-700 dark:group-hover:text-gray-800 transition-colors duration-300 font-medium">Setup & Deployment</div>
-                <div className="text-sm text-gray-500 dark:text-gray-600 mt-2">Days, not months</div>
+                <div className="text-5xl font-bold text-orange-600 dark:text-orange-400 mb-3 group-hover:text-orange-700 dark:group-hover:text-orange-300 transition-colors duration-300">Fast</div>
+                <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 font-medium">Setup & Deployment</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">Days, not months</div>
               </div>
             </div>
           </div>

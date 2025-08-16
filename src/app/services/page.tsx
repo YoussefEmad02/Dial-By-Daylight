@@ -227,7 +227,7 @@ export default function ServicesPage() {
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-xl transform hover:scale-105 hover:bg-white/20 transition-all duration-500">
                 <div className="text-2xl sm:text-3xl font-bold text-blue-200 mb-2">
-                  500+
+                  10+
                 </div>
                 <div className="text-sm sm:text-base text-blue-100 font-medium">
                   Successful Projects
@@ -235,7 +235,7 @@ export default function ServicesPage() {
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-xl transform hover:scale-105 hover:bg-white/20 transition-all duration-500">
                 <div className="text-2xl sm:text-3xl font-bold text-purple-200 mb-2">
-                  98%
+                  95%
                 </div>
                 <div className="text-sm sm:text-base text-purple-100 font-medium">
                   Client Satisfaction
@@ -256,7 +256,7 @@ export default function ServicesPage() {
 
       {/* Enhanced Services Grid */}
       <section
-        className="py-20 bg-gray-50"
+        className="py-20 bg-gray-50 dark:bg-gray-900"
         data-section="services"
         id="services"
       >
@@ -268,10 +268,10 @@ export default function ServicesPage() {
                 : "opacity-0 translate-x-[-100px]"
             }`}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
               Our Core Services
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Professional solutions designed to accelerate your business growth
               and success
             </p>
@@ -281,7 +281,7 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className={`group relative hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${
+                className={`group relative hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${
                   isSectionVisible("services")
                     ? `animate-slide-in-${index % 2 === 0 ? "left" : "right"}`
                     : `opacity-0 translate-x-[${
@@ -299,15 +299,15 @@ export default function ServicesPage() {
                     </div>
                     <Badge
                       variant="secondary"
-                      className="text-xs font-medium bg-blue-100 text-blue-700"
+                      className="text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"
                     >
                       {service.badge}
                     </Badge>
                   </div>
-                  <CardTitle className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-gray-700 transition-colors duration-300">
+                  <CardTitle className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                     {service.title}
                   </CardTitle>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-sm sm:text-base">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">
                     {service.description}
                   </p>
                 </CardHeader>
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                 <CardContent className="pt-0 relative flex flex-col h-full">
                   <div className="flex-1">
                     <div className="mb-4 sm:mb-6">
-                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-2" />
                         Key Features
                       </h4>
@@ -326,7 +326,7 @@ export default function ServicesPage() {
                             className="flex items-start group/item"
                           >
                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2 sm:mr-3 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300"></div>
-                            <span className="text-gray-600 text-xs sm:text-sm leading-relaxed group-hover/item:text-gray-700 transition-colors duration-300">
+                            <span className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed group-hover/item:text-gray-700 dark:group-hover/item:text-gray-200 transition-colors duration-300">
                               {feature}
                             </span>
                           </li>
@@ -375,8 +375,7 @@ export default function ServicesPage() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-lg sm:text-xl mb-6 sm:mb-8 opacity-90 max-w-3xl mx-auto">
-              Let our expert team help you achieve your business goals with our
-              comprehensive professional services.
+              Let us handle the calls, coordination, and conversion — so you can focus on closing deals and growing your business.
             </p>
           </div>
           <div
@@ -408,10 +407,10 @@ export default function ServicesPage() {
                 : "opacity-0 translate-x-[-100px]"
             }`}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
               Why Choose Our Services
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Discover the advantages of partnering with our professional
               service team
             </p>
@@ -421,7 +420,7 @@ export default function ServicesPage() {
             {benefits.map((benefit, index) => (
               <Card
                 key={index}
-                className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 backdrop-blur-sm transition-all duration-1500 ${
+                className={`group relative text-center hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 border-0 shadow-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-1500 ${
                   isSectionVisible("benefits")
                     ? `animate-slide-in-${index % 2 === 0 ? "left" : "right"}`
                     : `opacity-0 translate-x-[${
@@ -434,10 +433,10 @@ export default function ServicesPage() {
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
                     <benefit.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-sm sm:text-base">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">
                     {benefit.description}
                   </p>
                 </CardContent>
@@ -449,7 +448,7 @@ export default function ServicesPage() {
 
       {/* Enhanced Custom Solutions Section */}
       <section
-        className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
+        className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800"
         data-section="custom"
         id="custom"
       >
@@ -485,7 +484,7 @@ export default function ServicesPage() {
                 <Link href="/contact">
                   <Button
                     size="lg"
-                    className="bg-white text-blue-600 hover:bg-gray-100 px-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                    className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 px-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                   >
                     Discuss Your Custom Solution{" "}
                     <ArrowRight className="ml-2 w-4 h-4" />

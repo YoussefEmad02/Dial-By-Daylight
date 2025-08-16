@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 
 
@@ -22,25 +23,29 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30 shadow-lg">
-                <span className="text-white font-bold text-xl">DD</span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Dial By Daylight Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
+              />
               <span className="text-2xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
                 Dial By Daylight
               </span>
             </div>
             <p className="text-blue-100 mb-6 leading-relaxed text-lg">
               Remote-first BPO providing trained, English-fluent cold callers and appointment setters to growing
-              businesses across North America.
+              businesses worldwide.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-blue-100 hover:text-white transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>contact@dialbydaylight.com</span>
+                <span>info@dialbydaylight.com</span>
               </div>
               <div className="flex items-center space-x-3 text-blue-100 hover:text-white transition-colors">
                 <Phone className="w-5 h-5" />
-                <span>+1 (555) 123-4567</span>
+                <span>+201149957822</span>
               </div>
               <div className="flex items-center space-x-3 text-blue-100 hover:text-white transition-colors">
                 <MapPin className="w-5 h-5" />
@@ -132,13 +137,15 @@ export default function Footer() {
                   >
                     <Twitter className="w-5 h-5" />
                   </a>
-                  <a 
-                    href="#" 
-                    className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg" 
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
+                                     <a 
+                     href="https://www.linkedin.com/company/dialbydaylight" 
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg" 
+                     aria-label="LinkedIn"
+                   >
+                     <Linkedin className="w-5 h-5" />
+                   </a>
                   <a 
                     href="#" 
                     className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg" 
