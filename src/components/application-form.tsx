@@ -46,7 +46,7 @@ const applicationSchema = z.object({
   employmentStatus: z.enum(["employed", "between-jobs", "unemployed"]).refine((val) => val !== undefined, {
     message: "Please select your employment status",
   }),
-  applicationSource: z.enum(["upwork", "linkedin", "facebook", "google", "wuzzuf", "bayt", "referral"]).refine((val) => val !== undefined, {
+  applicationSource: z.enum(["upwork", "linkedin", "facebook", "google", "indeed", "wuzzuf", "bayt", "referral"]).refine((val) => val !== undefined, {
     message: "Please select where you found this opportunity",
   }),
 })
@@ -111,6 +111,7 @@ export default function ApplicationForm() {
     { value: "linkedin", label: "LinkedIn" },
     { value: "facebook", label: "Facebook" },
     { value: "google", label: "Google Search" },
+    { value: "indeed", label: "Indeed" },
     { value: "wuzzuf", label: "Wuzzuf" },
     { value: "bayt", label: "Bayt.com" },
     { value: "referral", label: "Referral" },

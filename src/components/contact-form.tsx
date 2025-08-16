@@ -292,6 +292,7 @@ export default function ContactForm() {
     { value: "clutch", label: "Clutch" },
     { value: "upwork", label: "Upwork" },
     { value: "linkedin", label: "LinkedIn" },
+    { value: "indeed", label: "Indeed" },
     { value: "referral", label: "Referral" },
     { value: "social-media", label: "Social Media" },
     { value: "other", label: "Other" },
